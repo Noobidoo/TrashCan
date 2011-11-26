@@ -45,17 +45,18 @@ public class TrashBlockListener extends BlockListener {
             return;
         }
         Player player = e.getPlayer();
+        Block block = e.getBlock();
         if (TrashCan.getConfigHandler().getUnlimited(player)) {
-            player.setItemInHand(new ItemStack(e.getPlayer().getItemInHand().getType(), 64));
+            player.setItemInHand(new ItemStack(player.getItemInHand().getType(), 64));
         }
-        if (TrashCan.getConfigHandler().getBlockTNT() && e.getBlock().getType() == Material.TNT && !player.hasPermission("trashcan.protection.tnt-bypass")) {
+        if (TrashCan.getConfigHandler().getBlockTNT() && block.getType() == Material.TNT && !player.hasPermission("trashcan.protection.tnt-bypass")) {
             e.setCancelled(true);
-            player.sendMessage(ChatColor.RED + "The admin has blocked TNT placement.");
+            player.sendMessage(ChatColor.RED + "You're not allowed to place TNT.");
         }
-        if (TrashCan.getConfigHandler().getBlockLava() && (e.getBlock().getType() == Material.LAVA || e.getBlock().getType() == Material.LAVA_BUCKET) && !player.hasPermission("trashcan.protection.lava-bypass")) {
-            if (e.getBlock().getType() == Material.LAVA || e.getBlock().getType() == Material.LAVA_BUCKET) {
+        if (TrashCan.getConfigHandler().getBlockLava() && (block.getType() == Material.LAVA || block.getType() == Material.LAVA_BUCKET) && !player.hasPermission("trashcan.protection.lava-bypass")) {
+            if (block.getType() == Material.LAVA || block.getType() == Material.LAVA_BUCKET) {
                 e.setCancelled(true);
-                player.sendMessage(ChatColor.RED + "The admin has blocked lava placement.");
+                player.sendMessage(ChatColor.RED + "You're not allowed to place lava.");
             }
         }
     }
@@ -72,26 +73,20 @@ public class TrashBlockListener extends BlockListener {
         }
         Block block = e.getBlock();
         Player player = e.getPlayer();
-        
+
         if (TrashCan.getConfigHandler().getMineSpawners() && player.getItemInHand().getType() == Material.DIAMOND_PICKAXE && block.getType() == Material.MOB_SPAWNER) {
             e.getPlayer().getWorld().dropItemNaturally(block.getLocation(), new ItemStack(Material.MOB_SPAWNER, 1));
-        }
-        if (TrashCan.getConfigHandler().getCoal() && block.getType() == Material.COAL_ORE) {
+        } else if (TrashCan.getConfigHandler().getCoal() && block.getType() == Material.COAL_ORE) {
             Bukkit.getServer().broadcastMessage(ChatColor.GRAY + player.getName() + " mined some coal ore!");
-        }
-        if (TrashCan.getConfigHandler().getIron() && block.getType() == Material.IRON_ORE) {
+        } else if (TrashCan.getConfigHandler().getIron() && block.getType() == Material.IRON_ORE) {
             Bukkit.getServer().broadcastMessage(ChatColor.GRAY + player.getName() + " mined some iron ore!");
-        }
-        if (TrashCan.getConfigHandler().getGold() && block.getType() == Material.GOLD_ORE) {
+        } else if (TrashCan.getConfigHandler().getGold() && block.getType() == Material.GOLD_ORE) {
             Bukkit.getServer().broadcastMessage(ChatColor.GRAY + player.getName() + " mined some gold ore!");
-        }
-        if (TrashCan.getConfigHandler().getDiamond() && block.getType() == Material.DIAMOND_ORE) {
+        } else if (TrashCan.getConfigHandler().getDiamond() && block.getType() == Material.DIAMOND_ORE) {
             Bukkit.getServer().broadcastMessage(ChatColor.GRAY + player.getName() + " mined some diamond ore!");
-        }
-        if (TrashCan.getConfigHandler().getRedstone() && block.getType() == Material.REDSTONE_ORE) {
+        } else if (TrashCan.getConfigHandler().getRedstone() && block.getType() == Material.REDSTONE_ORE) {
             Bukkit.getServer().broadcastMessage(ChatColor.GRAY + player.getName() + " mined some redstone ore!");
-        }
-        if (TrashCan.getConfigHandler().getLapis() && block.getType() == Material.LAPIS_ORE) {
+        } else if (TrashCan.getConfigHandler().getLapis() && block.getType() == Material.LAPIS_ORE) {
             Bukkit.getServer().broadcastMessage(ChatColor.GRAY + player.getName() + " mined some lapis ore!");
         }
     }

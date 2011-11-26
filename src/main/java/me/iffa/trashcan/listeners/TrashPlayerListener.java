@@ -145,7 +145,7 @@ public class TrashPlayerListener extends PlayerListener {
      */
     @Override
     public void onPlayerJoin(PlayerJoinEvent e) {
-        e.setJoinMessage(TrashCan.getConfigHandler().getJoinMessage());
+        e.setJoinMessage(ChatColor.YELLOW + e.getPlayer().getName() + " " + TrashCan.getConfigHandler().getJoinMessage());
 
         if (TrashCan.getConfigHandler().getNick(e.getPlayer()) != null) {
             e.getPlayer().setDisplayName(TrashCan.getConfigHandler().getNick(e.getPlayer()));
@@ -169,7 +169,7 @@ public class TrashPlayerListener extends PlayerListener {
      */
     @Override
     public void onPlayerQuit(PlayerQuitEvent e) {
-        e.setQuitMessage(TrashCan.getConfigHandler().getLeaveMessage());
+        e.setQuitMessage(ChatColor.YELLOW + e.getPlayer().getName() + " " + TrashCan.getConfigHandler().getLeaveMessage());
     }
 
     /**

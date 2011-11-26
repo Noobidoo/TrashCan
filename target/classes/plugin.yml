@@ -1,24 +1,26 @@
 # TrashCan plugin.yml (do not modify)
 name: TrashCan
-version: 'TC-1.31'
+version: 'TC-cb1.32'
 authors: [CainFoool, iffa]
 main: me.iffa.trashcan.TrashCan
 # Softdepends on CommandBin for a few reasons
 softdepend: [CommandBin]
 # Commands
 commands:
+       # Done (tp2p is now in this command) - perms: trashcan.general.tp, trashcan.general.tp.others
    tp:
        description: 'Teleport to a player.'
+       # Done - perms: trashcan.general.tphere
    tphere:
        description: 'Teleport a player to you.'
    setspawn:
        description: "Set the world's spawn location."
    spawn:
        description: 'Teleport to the worlds spawn.'
-   tp2p:
-       description: 'Teleport a player to another player.'
+       # Done - perms: trashcan.general.tpall
    tpall:
        description: 'Teleport everyone to you.'
+       # Done - perms: trashcan.general.tpworld
    tpworld:
        description: 'Teleport to a world.'
        # Done - perms: trashcan.admin.createworld
@@ -49,6 +51,7 @@ commands:
        description: 'Shoot a player into the air.'
    strike:
        description: 'Strike a player.'
+       # Done - perms: trashcan.admin.time
    time:
        description: 'Set the time of the world.'
        # Done (sun + rain) - perms: trashcan.admin.weather
@@ -179,6 +182,3 @@ commands:
        # Done - perms: trashcan.general.more
    more:
        description: 'Give some more of this!'
-# Permissions
-permissions: []
-  

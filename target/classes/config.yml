@@ -3,19 +3,19 @@
 # NOTE: Custom messages support &-color codes. http://www.minecraftwiki.net/wiki/Classic_server_protocol#Color_Codes
 settings:
   # Message to send when using /shutdown
-  shutdownmessage: &cThe server is going down for shutdown!
+  shutdownmessage: '&cThe server is going down for shutdown!'
   # True if kicks should be broadcasted
   broadcastkick: true
   # True if bans should be broadcasted
   broadcastban: true
   # Message to send when a player is muted (and tries to talk)
-  playerismuted: &cYou are muted, shh!
+  playerismuted: '&cYou are muted, shh!'
   # Message to send when a player is not allowed to use commands.
-  playercannotusecommands: &cYou cannot use commands.
+  playercannotusecommands: '&cYou cannot use commands.'
   # Join message to send
-  joinmessage: &ehas joined the game
+  joinmessage: '&ehas joined the game'
   # Leave message to send
-  leavemessage: &ehas left the game
+  leavemessage: '&ehas left the game'
   # True if XP should be dropped on death
   dropxpondeath: false
   # Maximum amount of mobs that can be spawned once with /spawnmob

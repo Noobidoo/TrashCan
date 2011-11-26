@@ -51,8 +51,7 @@ import org.bukkit.plugin.java.JavaPlugin;
  *    motion, politely asking you to stop, stealing your first born, and/or
  *    legal action.
  * 
- * NOTE TO CAIN: I am not breaking your license. I have only taken the commands
- * and features from CommandBin, and implemented them myself.
+ * NOTE TO CAIN: I am not breaking your license. Your license is invalid.
  * 
  * Main class of TrashCan, a (Craft)Bukkit plugin originally made by "CainFool", 
  * who does not know any proper Java and will never learn that either. Consider 

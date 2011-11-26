@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 // Bukkit Imports
+import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 
 // TrashCan Imports
@@ -58,6 +59,7 @@ public abstract class TrashCommand {
     // Variables
     protected String label;
     private static Map<String, TrashCommand> commands = new HashMap<String, TrashCommand>();
+    private static TrashCommandExecutor executor = new TrashCommandExecutor();
     
     /**
      * Constructor of TrashCommand.
@@ -130,11 +132,17 @@ public abstract class TrashCommand {
         commands.put("setwarp", new SetwarpCommand("setwarp"));
         commands.put("delwarp", new DelwarpCommand("delwarp"));
         
-        // Need to investigate the mysterious .getCommands() a bit more.
-        // TODO: Set TrashCommandExecutor as executor for all commands nicely.
-        System.out.println(TrashCan.getDescriptionFile().getCommands());
+        // Setting up help menu.
+        HelpCommand help = (HelpCommand) commands.get("help");
+        help.setupHelp();
+        
+        // Adding all commands to the CommandExecutor.
         @SuppressWarnings("unchecked")
         Map<String, Map<String, Object>> pluginCommands = (Map<String, Map<String, Object>>) TrashCan.getDescriptionFile().getCommands();
+        for (String command : pluginCommands.keySet()) {
+            Bukkit.getPluginCommand(command).setExecutor(executor);
+        }
+        
         
     }
     
