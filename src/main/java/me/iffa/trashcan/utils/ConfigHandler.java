@@ -654,4 +654,19 @@ public class ConfigHandler {
             LoggerUtil.log(Level.WARNING, "Problem while setting player specific setting: " + ex.toString());
         }
     }
+    
+    /**
+     * Sets god mode for a player.
+     * 
+     * @param player Player
+     * @param enabled True if god mode should be on
+     */
+    public void setGod(Player player, boolean enabled) {
+        config.get(ConfigFile.CONFIG).set(player.getName() + ".godmode", enabled);
+        try {
+            config.get(ConfigFile.CONFIG).save(file.get(ConfigFile.CONFIG));
+        } catch (IOException ex) {
+            LoggerUtil.log(Level.WARNING, "Problem while setting player specific setting: " + ex.toString());
+        }
+    }
 }

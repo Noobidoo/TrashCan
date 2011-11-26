@@ -13,9 +13,9 @@ settings:
   # Message to send when a player is not allowed to use commands.
   playercannotusecommands: '&cYou cannot use commands.'
   # Join message to send
-  joinmessage: '&ehas joined the game'
+  joinmessage: 'has joined the game'
   # Leave message to send
-  leavemessage: '&ehas left the game'
+  leavemessage: 'has left the game'
   # True if XP should be dropped on death
   dropxpondeath: false
   # Maximum amount of mobs that can be spawned once with /spawnmob

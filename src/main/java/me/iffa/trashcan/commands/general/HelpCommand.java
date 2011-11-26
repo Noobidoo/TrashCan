@@ -2,19 +2,15 @@
 package me.iffa.trashcan.commands.general;
 
 // Java Imports
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 // TrashCan Imports
-import me.iffa.trashcan.TrashCan;
 import me.iffa.trashcan.commands.TrashCommand;
 import me.iffa.trashcan.utils.HelpPage;
 import me.iffa.trashcan.utils.MessageUtil;
 
 // Bukkit Imports
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 
@@ -49,6 +45,10 @@ public class HelpCommand extends TrashCommand {
      */
     @Override
     public boolean executeCommand(CommandSender cs, String[] args) {
+        if (true) {
+            MessageUtil.sendMessage(cs, ChatColor.GRAY + "Sorry, this command is temporarily disabled.");
+            return true;
+        }
         if (args.length < 1) {
             pages.get(1).sendHelpPage(cs);
         } else {
