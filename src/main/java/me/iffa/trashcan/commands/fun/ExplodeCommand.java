@@ -1,8 +1,11 @@
 // Pacakage Declaration
 package me.iffa.trashcan.commands.fun;
 
+// TrashCan Imports
 import me.iffa.trashcan.commands.TrashCommand;
 import me.iffa.trashcan.utils.MessageUtil;
+
+// Bukkit Imports
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
@@ -10,6 +13,7 @@ import org.bukkit.entity.Player;
 
 /**
  * Represents /explode.
+ * TrashCan license: http://creativecommons.org/licenses/by-nc-nd/3.0/
  * 
  * @author iffamies
  */

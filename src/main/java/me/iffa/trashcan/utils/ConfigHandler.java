@@ -25,6 +25,7 @@ import org.bukkit.entity.Player;
 /**
  * Utility class to handle loading the configuration file(s) and getting/setting
  * values.
+ * TrashCan license: http://creativecommons.org/licenses/by-nc-nd/3.0/
  * 
  * @author iffamies
  */

@@ -20,6 +20,7 @@ import org.bukkit.event.entity.ProjectileHitEvent;
 /**
  * Entity listener for TrashCan features like god mode, creeper explosion protection,
  * explosion bows and anti-Enderman grief.
+ * TrashCan license: http://creativecommons.org/licenses/by-nc-nd/3.0/
  * 
  * @author iffamies
  */

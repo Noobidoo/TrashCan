@@ -7,6 +7,7 @@ import java.util.logging.Logger;
 
 /**
  * Utility class to make logging using Logger easier.
+ * TrashCan license: http://creativecommons.org/licenses/by-nc-nd/3.0/
  * 
  * @author iffamies
  */

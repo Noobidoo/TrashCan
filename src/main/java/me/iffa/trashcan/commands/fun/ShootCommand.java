@@ -14,7 +14,8 @@ import org.bukkit.util.Vector;
 
 /**
  * Represents /shoot.
- *
+ * TrashCan license: http://creativecommons.org/licenses/by-nc-nd/3.0/
+ * 
  * @author iffamies
  */
 public class ShootCommand extends TrashCommand {

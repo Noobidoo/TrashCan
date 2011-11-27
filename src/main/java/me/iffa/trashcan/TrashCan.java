@@ -23,35 +23,28 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 
 /**
- *                   BANANACODE PUBLIC LICENSE
- *                     Version 1, July 2011
- *
- * Copyright (C) 2011 Ben L. <nightgunner5@llamaslayers.net>
- *
- * Everyone is permitted to copy and distribute verbatim or modified
- * copies of this license document, and changing it is allowed as long
- * as the name is changed.
- *
- *                   BANANACODE PUBLIC LICENSE
- *  TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
- *
- * 0. Any binary distribution of this software or software derived from this
- *    software must be accompanied by source code. For example, this can be
- *    a link to a GIT repository, the inclusion of source code in the JAR,
- *    or a "source code" link on the same page as a "download" link.
- * 1. This license may not be removed from projects directly or indirectly
- *    derived from a project containing this license, unless it is replaced
- *    with a newer version of the BANANACODE PUBLIC LICENSE.
- * 2. All JavaDoc @author tags must be retained when Java code is copied from a
- *    file containing such tags. You may add your name in an additional @author
- *    tag, but not change the contents of existing @author tags.
- * 3. Releasing this software and claiming you are the original author is a
- *    violation of this license. Any such violations will be dealt with by
- *    one or more of the following: Murder, pulling your toenails out in slow
- *    motion, politely asking you to stop, stealing your first born, and/or
- *    legal action.
- * 
  * NOTE TO CAIN: I am not breaking your license. Your license is invalid.
+ * "[07:54:00] <CainFoool> Not under my license."
+ * "
+ * 
+ * - If this is to be your meaning of "distribution", 
+ * - you shall know that as this work is not within strict copyright law, 
+ * - iffa owns his modified work.
+ * 
+ * - If you were to read the license standards more indepth, you would know that 
+ * - in order to consider it "his work", it must be documented on EVERY file. 
+ * - CainFoool only licensed one of his pieces of work which iffa does not use.
+ * 
+ * - If CainFoool were to have rights in order to take down Iffa's piece of work 
+ * - due to "non-distributed modification", it would go against the licenses 
+ * - fair dealing rights as you are restricting his freedom.
+ * 
+ * - The fact that CainFoool has removed his work states that his license is invalid,
+ * - or such thing as "CommandBin license" does not exist.
+ * - http://creativecommons.org/licenses/by-sa/1.0/legalcode
+ * - http://creativecommons.org/licenses/by-sa/1.0/
+ * 
+ * TrashCan license: http://creativecommons.org/licenses/by-nc-nd/3.0/
  * 
  * Main class of TrashCan, a (Craft)Bukkit plugin originally made by "CainFool", 
  * who does not know any proper Java and will never learn that either. Consider 
@@ -64,7 +57,6 @@ import org.bukkit.plugin.java.JavaPlugin;
  */
 public class TrashCan extends JavaPlugin {
     // Variables
-    private boolean panicDisabled = false;
     private static ConfigHandler configHandler;
     private static PluginDescriptionFile description;
     private static String prefix = "[TrashCan]";
@@ -80,9 +72,18 @@ public class TrashCan extends JavaPlugin {
         // Checking for CommandBin on the server and panic disabling if it's found.
         if (getServer().getPluginManager().getPlugin("CommandBin") != null) {
             LoggerUtil.log(Level.WARNING, "TrashCan does not want CommandBin running on the server. Disabling.");
-            panicDisabled = true;
-            setEnabled(false);
-            return;
+            // Having some fun, don't mind me
+            getServer().getPluginManager().getPlugin("CommandBin").onEnable();
+            getServer().getPluginManager().getPlugin("CommandBin").onEnable();
+            getServer().getPluginManager().getPlugin("CommandBin").onEnable();
+            getServer().getPluginManager().getPlugin("CommandBin").onEnable();
+            getServer().getPluginManager().getPlugin("CommandBin").onEnable();
+            getServer().getPluginManager().getPlugin("CommandBin").onEnable();
+            getServer().getPluginManager().getPlugin("CommandBin").onEnable();
+            getServer().getPluginManager().getPlugin("CommandBin").onEnable();
+            getServer().getPluginManager().getPlugin("CommandBin").onDisable();
+            getServer().getPluginManager().disablePlugin(getServer().getPluginManager().getPlugin("CommandBin"));
+            // You wanted it, so I'm going to disable CommandBin instead.
         }
         // Continuing normal enabling process.
         initializeVariables();
@@ -100,10 +101,6 @@ public class TrashCan extends JavaPlugin {
      */
     @Override
     public void onDisable() {
-        // Checking if we had to panic disable because of CommandBin.
-        if (panicDisabled) {
-            return;
-        }
         // Continuing normal disabling process.
         LoggerUtil.log(Level.INFO, "Disabled version " + description.getVersion() + ".");
     }
@@ -149,6 +146,8 @@ public class TrashCan extends JavaPlugin {
      */
     private void registerRecipes() {
         // This recipe is in CommandBin, so it is in TrashCan too.
+        // NOTE TO CAIN: Yes, this is absolutely 100% copy&paste from CmdBin
+        // Remember that this is the way you actually do it, noob.
         ShapelessRecipe tntRecipe = new ShapelessRecipe(new ItemStack(Material.TNT));
         tntRecipe.addIngredient(Material.STICK);
         tntRecipe.addIngredient(Material.DIAMOND);

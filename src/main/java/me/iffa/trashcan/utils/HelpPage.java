@@ -13,6 +13,7 @@ import org.bukkit.command.CommandSender;
  * Represents a page of /help.
  * NOTE: It is suggested that a single help page has 5 or 6 commands, so they all
  * fit into the chat box nicely.
+ * TrashCan license: http://creativecommons.org/licenses/by-nc-nd/3.0/
  * 
  * @author iffamies
  */

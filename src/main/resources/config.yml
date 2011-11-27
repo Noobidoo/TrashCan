@@ -1,6 +1,7 @@
 # TrashCan main configuration file
 # Now CommandBin config had little to none documentation so I'll just do it here.
 # NOTE: Custom messages support &-color codes. http://www.minecraftwiki.net/wiki/Classic_server_protocol#Color_Codes
+# TrashCan license: http://creativecommons.org/licenses/by-nc-nd/3.0/
 settings:
   # Message to send when using /shutdown
   shutdownmessage: '&cThe server is going down for shutdown!'
