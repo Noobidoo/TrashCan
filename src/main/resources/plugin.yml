@@ -95,6 +95,7 @@ commands:
        # Done - perms: trashcan.fun.light
    light:
        description: 'Set somebody on fire.'
+       # Done - perms: trashcan.fun.roll
    roll:
        description: 'Roll a number.'
        # Done, unhandicap is now in this command - perms: trashcan.moderating.handicap
@@ -103,6 +104,7 @@ commands:
        # Done, /unmute is now in this command - perms: trashcan.moderating.mute
    mute:
        description: 'Mute a player.'
+       # Done - perms: trashcan.fun.smoke
    smoke:
        description: 'Become the walking chimney.'
        # Done - perms: trashcan.fun.explosionstick
@@ -142,6 +144,7 @@ commands:
        # Done - perms: trashcan.general.nick, trashcan.general.nick.others
    nick:
        description: 'Set somebodys nickname.'
+       # Done - perms: trashcan.general.setxp(.others)
    setxp:
        description: 'Set somebodys experience.'
        # Done - perms: trashcan.moderation.delwarp

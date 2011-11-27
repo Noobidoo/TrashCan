@@ -141,22 +141,8 @@ public class TrashCan extends JavaPlugin {
         pm.registerEvent(Event.Type.PLAYER_EGG_THROW, playerListener, Event.Priority.Normal, this);
     }
     
-    /**
-     * Registers custom recipes.
-     */
-    private void registerRecipes() {
-        // This recipe is in CommandBin, so it is in TrashCan too.
-        // NOTE TO CAIN: Yes, this is absolutely 100% copy&paste from CmdBin
-        // Remember that this is the way you actually do it, noob.
-        ShapelessRecipe tntRecipe = new ShapelessRecipe(new ItemStack(Material.TNT));
-        tntRecipe.addIngredient(Material.STICK);
-        tntRecipe.addIngredient(Material.DIAMOND);
-        tntRecipe.addIngredient(Material.GOLD_INGOT);
-        
-        // Adding all recipes to Bukkit.
-        getServer().addRecipe(tntRecipe);
-        
-    }
+    // NOTE: I have agreed to remove registerRecipes() as seems to be too similar
+    // to Cain's original implementation.
     
     /* Efficiency methods */
     

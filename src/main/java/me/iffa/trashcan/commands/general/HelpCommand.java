@@ -2,8 +2,7 @@
 package me.iffa.trashcan.commands.general;
 
 // Java Imports
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
 // TrashCan Imports
 import me.iffa.trashcan.commands.TrashCommand;
@@ -11,6 +10,7 @@ import me.iffa.trashcan.utils.HelpPage;
 import me.iffa.trashcan.utils.MessageUtil;
 
 // Bukkit Imports
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 
@@ -21,8 +21,6 @@ import org.bukkit.command.CommandSender;
  * @author iffamies
  */
 public class HelpCommand extends TrashCommand {
-    // Variables
-    private Map<Integer, HelpPage> pages = new HashMap<Integer, HelpPage>();
 
     /**
      * Constructor of HelpCommand.
@@ -32,13 +30,25 @@ public class HelpCommand extends TrashCommand {
     public HelpCommand(String label) {
         super(label);
     }
-
     /**
-     * Sets up help pages.
+     * Sends and handles help pages.
      */
+    private static final int PER_PAGE = 5;
+
     @SuppressWarnings("unchecked")
-    public void setupHelp() {
+    public void sendHelpPage(int page, String[] args, CommandSender cs) {
         // TODO: Set up help pages here
+        HelpPage send = new HelpPage(page);
+        List<String> commands = TrashCommand.getCommandsList();
+        int maxPages = commands.size() / PER_PAGE;
+        if (page < 0 || page > maxPages) {
+            MessageUtil.sendMessage(cs, ChatColor.RED + "The page you were looking for was not found!");
+            return;
+        }
+        for (int i = PER_PAGE * page; i < PER_PAGE * page + PER_PAGE && i < commands.size(); i++) {
+            send.getCommands().put(commands.get(i), Bukkit.getPluginCommand(commands.get(i)).getDescription());
+        }
+        send.sendHelpPage(cs);
     }
 
     /**
@@ -51,7 +61,6 @@ public class HelpCommand extends TrashCommand {
             return true;
         }
         if (args.length < 1) {
-            pages.get(1).sendHelpPage(cs);
         } else {
             int page = 0;
             try {
@@ -59,11 +68,6 @@ public class HelpCommand extends TrashCommand {
             } catch (NumberFormatException ex) {
                 return false;
             }
-            if (!pages.containsKey(page)) {
-                MessageUtil.sendMessage(cs, ChatColor.RED + "Page not found! Valid pages: 1-" + pages.size() + ".");
-                return true;
-            }
-            pages.get(page).sendHelpPage(cs);
         }
         return true;
     }
@@ -73,6 +77,6 @@ public class HelpCommand extends TrashCommand {
      */
     @Override
     public void sendUsage(CommandSender cs) {
-        MessageUtil.sendMessage(cs, ChatColor.GRAY + "Usage: /help [page (1-" + pages.size() + ")]");
+        MessageUtil.sendMessage(cs, ChatColor.GRAY + "Usage: /help [page (1-" + TrashCommand.getCommands().size() / PER_PAGE + ")]");
     }
 }

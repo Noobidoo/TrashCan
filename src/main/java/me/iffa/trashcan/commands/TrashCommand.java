@@ -2,7 +2,9 @@
 package me.iffa.trashcan.commands;
 
 // Java Imports
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 // Bukkit Imports
@@ -60,6 +62,7 @@ public abstract class TrashCommand {
     // Variables
     protected String label;
     private static Map<String, TrashCommand> commands = new HashMap<String, TrashCommand>();
+    private static List<String> commandsList = new ArrayList<String>();
     private static TrashCommandExecutor executor = new TrashCommandExecutor();
     
     /**
@@ -78,6 +81,15 @@ public abstract class TrashCommand {
      */
     public static Map<String, TrashCommand> getCommands() {
         return commands;
+    }
+    
+    /**
+     * Gets the List containing all commands of TrashCan.
+     * 
+     * @return List containing all commands
+     */
+    public static List<String> getCommandsList() {
+        return commandsList;
     }
     
     /**
@@ -133,9 +145,10 @@ public abstract class TrashCommand {
         commands.put("setwarp", new SetwarpCommand("setwarp"));
         commands.put("delwarp", new DelwarpCommand("delwarp"));
         
-        // Setting up help menu.
-        HelpCommand help = (HelpCommand) commands.get("help");
-        help.setupHelp();
+        // Adding each command to the List of all commands.
+        for (String cmd : commands.keySet()) {
+            commandsList.add(cmd);
+        }
         
         // Adding all commands to the CommandExecutor.
         @SuppressWarnings("unchecked")

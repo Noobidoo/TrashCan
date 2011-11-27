@@ -12,18 +12,18 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 /**
- * Represents /torchbow.
+ * Represents /smoke.
  * TrashCan license: http://creativecommons.org/licenses/by-nc-nd/3.0/
  * 
  * @author iffamies
  */
-public class TorchbowCommand extends TrashCommand {
+public class SmokeCommand extends TrashCommand {
     /**
-     * Constructor of TorchbowCommand.
+     * Constructor of SmokeCommand.
      * 
      * @param label Command label
      */
-    public TorchbowCommand(String label) {
+    public SmokeCommand(String label) {
         super(label);
     }
 
@@ -32,16 +32,16 @@ public class TorchbowCommand extends TrashCommand {
      */
     @Override
     public boolean executeCommand(CommandSender cs, String[] args) {
-        if (cs.hasPermission("trashcan.fun.torchbow")) {
+        if (cs.hasPermission("trashcan.fun.smoke")) {
             if (!(cs instanceof Player)) {
                 MessageUtil.sendMessage(cs, "Sorry, only players can use this command.");
                 return true;
             }
-            TrashCan.getConfigHandler().setTorchbow(!TrashCan.getConfigHandler().getTorchbow((Player)cs), (Player)cs);
-            if (TrashCan.getConfigHandler().getTorchbow((Player)cs)) {
-                MessageUtil.sendMessage(cs, ChatColor.GREEN + "Torchbow has been enabled for you!");
+            TrashCan.getConfigHandler().setSmoke(!TrashCan.getConfigHandler().getSmoke((Player)cs), (Player)cs);
+            if (TrashCan.getConfigHandler().getSmoke((Player)cs)) {
+                MessageUtil.sendMessage(cs, ChatColor.GREEN + "Smoke has been enabled for you!");
             } else {
-                MessageUtil.sendMessage(cs, ChatColor.GREEN + "Torchbow has been disabled for you!");
+                MessageUtil.sendMessage(cs, ChatColor.GREEN + "Smoke has been disabled for you!");
             }
             return true;
         } else {
