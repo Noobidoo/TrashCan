@@ -55,7 +55,7 @@ public class PaidCommand extends TrashCommand {
         
         Player target = Bukkit.getPlayer(args[0]);
         if (hasPaid(cs, target)) {
-            MessageUtil.sendMessage(cs, ChatColor.GREEN + target.getName() + " has paid for Minecraft.");
+            MessageUtil.sendMessage(cs, ChatColor.GOLD + target.getName() + " has paid for Minecraft.");
         } else {
             MessageUtil.sendMessage(cs, ChatColor.RED + target.getName() + " has not paid for Minecraft.");
         }

@@ -82,7 +82,7 @@ public class ItemCommand extends TrashCommand {
                 itemStack.setAmount(amount);
                 player.getInventory().addItem(itemStack);
             }
-            MessageUtil.sendMessage(player, ChatColor.GREEN + "You've been given " + itemStack.getAmount() + " of " + itemMat.toString() + " (" + itemMat.getId() + ")!");
+            MessageUtil.sendMessage(player, ChatColor.GOLD + "You've been given " + itemStack.getAmount() + " of " + itemMat.toString() + " (" + itemMat.getId() + ")!");
             return true;
         }
     }

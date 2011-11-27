@@ -34,14 +34,14 @@ public class CrossbowCommand extends TrashCommand {
     public boolean executeCommand(CommandSender cs, String[] args) {
         if (cs.hasPermission("trashcan.fun.crossbow")) {
             if (!(cs instanceof Player)) {
-                MessageUtil.sendMessage(cs, TrashCan.getPrefix() + " Sorry, only players can use this command.");
+                MessageUtil.sendMessage(cs, "Sorry, only players can use this command.");
                 return true;
             }
             TrashCan.getConfigHandler().setCrossbow(!TrashCan.getConfigHandler().getCrossbow((Player)cs), (Player)cs);
             if (TrashCan.getConfigHandler().getCrossbow((Player)cs)) {
-                MessageUtil.sendMessage(cs, ChatColor.GREEN + "Crossbow has been enabled for you!");
+                MessageUtil.sendMessage(cs, ChatColor.GOLD + "Crossbow has been enabled for you!");
             } else {
-                MessageUtil.sendMessage(cs, ChatColor.GREEN + "Crossbow has been disabled for you!");
+                MessageUtil.sendMessage(cs, ChatColor.GOLD + "Crossbow has been disabled for you!");
             }
             return true;
         } else {

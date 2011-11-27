@@ -48,7 +48,7 @@ public class CreativeCommand extends TrashCommand {
                 return true;
             }
             player.setGameMode(GameMode.CREATIVE);
-            MessageUtil.sendMessage(player, ChatColor.GREEN + "You're now playing creative!");
+            MessageUtil.sendMessage(player, ChatColor.GOLD + "You're now playing creative!");
         } else {
             if (!cs.hasPermission("trashcan.general.creative.others")) {
                 MessageUtil.sendMessage(cs, ChatColor.RED + "You don't have permission!");
@@ -65,8 +65,8 @@ public class CreativeCommand extends TrashCommand {
                 return true;
             }
             target.setGameMode(GameMode.CREATIVE);
-            MessageUtil.sendMessage(cs, ChatColor.GREEN + "'" + target.getName() + "' is now playing creative!");
-            MessageUtil.sendMessage(target, ChatColor.GREEN + "You're now playing creative!");
+            MessageUtil.sendMessage(cs, ChatColor.GOLD + "'" + target.getName() + "' is now playing creative!");
+            MessageUtil.sendMessage(target, ChatColor.GOLD + "You're now playing creative!");
         }
         return true;
     }

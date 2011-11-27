@@ -62,7 +62,7 @@ public class SpawnmobCommand extends TrashCommand {
                 Wolf wolf = (Wolf) spawnCreature;
                 wolf.setOwner(player);
             }
-            MessageUtil.sendMessage(player, ChatColor.GREEN + "Spawned 1 " + args[0] + ".");
+            MessageUtil.sendMessage(player, ChatColor.GOLD + "Spawned 1 of " + args[0] + ".");
         } else {
             CreatureType mob = CreatureType.fromName(args[0]);
             int amount = 1;
@@ -87,7 +87,7 @@ public class SpawnmobCommand extends TrashCommand {
                     wolf.setOwner(player);
                 }
             }
-            MessageUtil.sendMessage(player, ChatColor.GREEN + "Spawned " + amount + " " + args[0] + "(s).");
+            MessageUtil.sendMessage(player, ChatColor.GOLD + "Spawned " + amount + " of " + args[0] + ".");
         }
         return true;
     }

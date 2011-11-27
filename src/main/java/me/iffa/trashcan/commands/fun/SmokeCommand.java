@@ -39,9 +39,9 @@ public class SmokeCommand extends TrashCommand {
             }
             TrashCan.getConfigHandler().setSmoke(!TrashCan.getConfigHandler().getSmoke((Player)cs), (Player)cs);
             if (TrashCan.getConfigHandler().getSmoke((Player)cs)) {
-                MessageUtil.sendMessage(cs, ChatColor.GREEN + "Smoke has been enabled for you!");
+                MessageUtil.sendMessage(cs, ChatColor.GOLD + "Smoke has been enabled for you!");
             } else {
-                MessageUtil.sendMessage(cs, ChatColor.GREEN + "Smoke has been disabled for you!");
+                MessageUtil.sendMessage(cs, ChatColor.GOLD + "Smoke has been disabled for you!");
             }
             return true;
         } else {

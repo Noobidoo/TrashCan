@@ -45,13 +45,13 @@ public class MytimeCommand extends TrashCommand {
         }
         if (args[0].equalsIgnoreCase("day")) {
             player.setPlayerTime(0, false);
-            MessageUtil.sendMessage(player, ChatColor.GREEN + "Changed your time to day!");
+            MessageUtil.sendMessage(player, ChatColor.GOLD + "Changed your time to day!");
         } else if (args[0].equalsIgnoreCase("night")) {
             player.setPlayerTime(13801, false);
-            MessageUtil.sendMessage(player, ChatColor.GREEN + "Changed your time to night!");
+            MessageUtil.sendMessage(player, ChatColor.GOLD + "Changed your time to night!");
         } else if (args[0].equalsIgnoreCase("reset")) {
             player.resetPlayerTime();
-            MessageUtil.sendMessage(player, ChatColor.GREEN + "Your time has been reset!");
+            MessageUtil.sendMessage(player, ChatColor.GOLD + "Your time has been reset!");
         } else {
             return false;
         }

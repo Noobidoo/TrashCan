@@ -53,7 +53,7 @@ public class SetxpCommand extends TrashCommand {
                     return true;
                 }
                 player.setExperience(amount);
-                MessageUtil.sendMessage(cs, ChatColor.GREEN + "Your experience has been set to '" + amount + "'!");
+                MessageUtil.sendMessage(cs, ChatColor.GOLD + "Your experience has been set to '" + amount + "'!");
             } else {
                 if (!cs.hasPermission("trashcan.general.setxp.others")) {
                     MessageUtil.sendMessage(cs, ChatColor.RED + "You don't have permission!");
@@ -72,7 +72,7 @@ public class SetxpCommand extends TrashCommand {
                     return true;
                 }
                 target.setExperience(amount);
-                MessageUtil.sendMessage(cs, ChatColor.GREEN + "Set '" + target.getName() + "'s experience to '" + amount + "'!");
+                MessageUtil.sendMessage(cs, ChatColor.GOLD + "Set '" + target.getName() + "'s experience to '" + amount + "'!");
             }
             return true;
         }

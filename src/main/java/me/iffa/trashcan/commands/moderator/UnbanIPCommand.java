@@ -45,7 +45,7 @@ public class UnbanIPCommand extends TrashCommand {
                 return true;
             }
             TrashCan.getConfigHandler().setIPBanned(false, args[0], null);
-            MessageUtil.sendMessage(cs, ChatColor.GREEN + "Unbanned '" + args[0] + "'.");
+            MessageUtil.sendMessage(cs, ChatColor.GOLD + "Unbanned '" + args[0] + "'.");
             return true;
         }
         return true;

@@ -49,7 +49,7 @@ public class RollCommand extends TrashCommand {
             return true;
         }
         long result = Math.round(((Math.random() * (arg2) - arg1)) + arg1);
-        Bukkit.broadcastMessage(ChatColor.GREEN + (cs instanceof Player ? ((Player)cs).getName() : "Console") + " rolled " + result + "!");
+        Bukkit.broadcastMessage(ChatColor.GOLD + (cs instanceof Player ? ((Player)cs).getName() : "Console") + " rolled " + result + "!");
         return true;
     }
 

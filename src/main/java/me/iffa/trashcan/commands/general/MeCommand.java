@@ -48,7 +48,7 @@ public class MeCommand extends TrashCommand {
             for (int arg = 0; arg < args.length; arg++) {
                 text = text + " " + args[arg];
             }
-            Bukkit.broadcastMessage(ChatColor.GRAY +  "* " + player.getName() + text + ".");
+            Bukkit.broadcastMessage(ChatColor.GOLD +  "* " + player.getName() + text);
             return true;
         }
     }

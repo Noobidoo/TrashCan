@@ -34,14 +34,14 @@ public class LightningstickCommand extends TrashCommand {
     public boolean executeCommand(CommandSender cs, String[] args) {
         if (cs.hasPermission("trashcan.fun.lightningstick")) {
             if (!(cs instanceof Player)) {
-                MessageUtil.sendMessage(cs, TrashCan.getPrefix() + " Sorry, only players can use this command.");
+                MessageUtil.sendMessage(cs, "Sorry, only players can use this command.");
                 return true;
             }
             TrashCan.getConfigHandler().setLightningstick(!TrashCan.getConfigHandler().getLightningStick((Player)cs), (Player)cs);
             if (TrashCan.getConfigHandler().getLightningStick((Player)cs)) {
-                MessageUtil.sendMessage(cs, ChatColor.GREEN + "Lightningstick has been enabled for you!");
+                MessageUtil.sendMessage(cs, ChatColor.GOLD + "Lightningstick has been enabled for you!");
             } else {
-                MessageUtil.sendMessage(cs, ChatColor.GREEN + "Lightningstick has been disabled for you!");
+                MessageUtil.sendMessage(cs, ChatColor.GOLD + "Lightningstick has been disabled for you!");
             }
             return true;
         } else {

@@ -46,7 +46,12 @@ public class HelpCommand extends TrashCommand {
             return;
         }
         for (int i = PER_PAGE * page; i < PER_PAGE * page + PER_PAGE && i < commands.size(); i++) {
-            send.getCommands().put(commands.get(i), Bukkit.getPluginCommand(commands.get(i)).getDescription());
+            String description = "No description";
+            try {
+                description = Bukkit.getPluginCommand(commands.get(i)).getDescription();
+            } catch (NullPointerException ex) {
+            }
+            send.getCommands().put(commands.get(i), description);
         }
         send.sendHelpPage(cs);
     }
@@ -56,11 +61,12 @@ public class HelpCommand extends TrashCommand {
      */
     @Override
     public boolean executeCommand(CommandSender cs, String[] args) {
-        if (true) {
-            MessageUtil.sendMessage(cs, ChatColor.GRAY + "Sorry, this command is temporarily disabled.");
-            return true;
-        }
+//        if (true) {
+//            MessageUtil.sendMessage(cs, ChatColor.GRAY + "Sorry, this command is temporarily disabled.");
+//            return true;
+//        }
         if (args.length < 1) {
+            sendHelpPage(0, args, cs);
         } else {
             int page = 0;
             try {
@@ -68,6 +74,7 @@ public class HelpCommand extends TrashCommand {
             } catch (NumberFormatException ex) {
                 return false;
             }
+            sendHelpPage(page, args, cs);
         }
         return true;
     }
@@ -77,6 +84,6 @@ public class HelpCommand extends TrashCommand {
      */
     @Override
     public void sendUsage(CommandSender cs) {
-        MessageUtil.sendMessage(cs, ChatColor.GRAY + "Usage: /help [page (1-" + TrashCommand.getCommands().size() / PER_PAGE + ")]");
+        MessageUtil.sendMessage(cs, ChatColor.GRAY + "Usage: /help [page (0-" + TrashCommand.getCommands().size() / PER_PAGE + ")]");
     }
 }

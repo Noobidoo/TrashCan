@@ -35,14 +35,14 @@ public class ExplosionBowCommand extends TrashCommand {
     public boolean executeCommand(CommandSender cs, String[] args) {
         if (cs.hasPermission("trashcan.fun.explosionbow")) {
             if (!(cs instanceof Player)) {
-                MessageUtil.sendMessage(cs, TrashCan.getPrefix() + " Sorry, only players can use this command.");
+                MessageUtil.sendMessage(cs, "Sorry, only players can use this command.");
                 return true;
             }
             TrashCan.getConfigHandler().setExplosionBow(!TrashCan.getConfigHandler().getExplosionBow((Player) cs), (Player) cs);
             if (TrashCan.getConfigHandler().getExplosionBow((Player)cs)) {
-                MessageUtil.sendMessage(cs, ChatColor.GREEN + "Explosionbow has been enabled for you!");
+                MessageUtil.sendMessage(cs, ChatColor.GOLD + "Explosionbow has been enabled for you!");
             } else {
-                MessageUtil.sendMessage(cs, ChatColor.GREEN + "Explosionbow has been disabled for you!");
+                MessageUtil.sendMessage(cs, ChatColor.GOLD + "Explosionbow has been disabled for you!");
             }
             return true;
         } else {

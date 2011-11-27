@@ -49,7 +49,7 @@ public class HandicapCommand extends TrashCommand {
         if (TrashCan.getConfigHandler().getHandicapped(target)) {
             MessageUtil.sendMessage(target, ChatColor.RED + "You have been handicapped!");
         } else {
-            MessageUtil.sendMessage(target, ChatColor.GREEN + "You have been unhandicapped!");
+            MessageUtil.sendMessage(target, ChatColor.GOLD + "You have been unhandicapped!");
         }
         return true;
     }

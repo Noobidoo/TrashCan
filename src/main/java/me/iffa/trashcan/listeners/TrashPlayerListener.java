@@ -115,7 +115,7 @@ public class TrashPlayerListener extends PlayerListener {
                 if (e.getClickedBlock().getType() == Material.DRAGON_EGG) {
                     Location dragon = e.getClickedBlock().getLocation();
                     e.getPlayer().getWorld().spawnCreature(dragon, CreatureType.ENDER_DRAGON);
-                    e.getPlayer().sendMessage(ChatColor.RED + "You have made the Enderdragon arise from The End!");
+                    e.getPlayer().sendMessage(ChatColor.GOLD + "You have made the Enderdragon arise from The End!");
                     e.getClickedBlock().setType(Material.AIR);
                 }
             }
@@ -129,11 +129,6 @@ public class TrashPlayerListener extends PlayerListener {
      */
     @Override
     public void onPlayerLogin(PlayerLoginEvent e) {
-        // Moved IP ban check to PlayerLogin, since normal ban is here too.
-        if (TrashCan.getConfigHandler().getIPBanned(e.getPlayer())) {
-            e.disallow(Result.KICK_BANNED, "You are IP banned.");
-            return;
-        }
         if (TrashCan.getConfigHandler().getBanned(e.getPlayer())) {
             e.disallow(Result.KICK_BANNED, "You are banned: " + TrashCan.getConfigHandler().getBanReason(e.getPlayer()));
         }
@@ -146,6 +141,10 @@ public class TrashPlayerListener extends PlayerListener {
      */
     @Override
     public void onPlayerJoin(PlayerJoinEvent e) {
+        if (TrashCan.getConfigHandler().getIPBanned(e.getPlayer())) {
+            e.getPlayer().kickPlayer("You are IP banned!");
+            return;
+        }
         e.setJoinMessage(ChatColor.YELLOW + e.getPlayer().getName() + " " + TrashCan.getConfigHandler().getJoinMessage());
 
         if (TrashCan.getConfigHandler().getNick(e.getPlayer()) != null) {

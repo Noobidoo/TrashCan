@@ -62,10 +62,10 @@ public class WeatherCommand extends TrashCommand {
             if (args[0].equalsIgnoreCase("sun")) {
                 world.setThundering(false);
                 world.setStorm(false);
-                MessageUtil.sendMessage(cs, ChatColor.GREEN + "It is now sunny in '" + world.getName() + "'!");
+                MessageUtil.sendMessage(cs, ChatColor.GOLD + "It is now sunny in '" + world.getName() + "'!");
             } else if (args[0].equalsIgnoreCase("rain")) {
                 world.setStorm(true);
-                MessageUtil.sendMessage(cs, ChatColor.GREEN + "It is now rainy in '" + world.getName() + "'!");
+                MessageUtil.sendMessage(cs, ChatColor.GOLD + "It is now rainy in '" + world.getName() + "'!");
             } else {
                 return false;
             }

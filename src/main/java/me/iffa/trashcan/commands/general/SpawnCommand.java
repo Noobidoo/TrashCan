@@ -44,7 +44,7 @@ public class SpawnCommand extends TrashCommand {
         Player player = (Player) cs;
         if (args.length < 1) {
             player.teleport(player.getWorld().getSpawnLocation());
-            MessageUtil.sendMessage(player, ChatColor.GREEN + "Teleported!");
+            MessageUtil.sendMessage(player, ChatColor.GOLD + "Teleported!");
         } else {
             World world = Bukkit.getWorld(args[0]);
             if (world == null) {
@@ -52,7 +52,7 @@ public class SpawnCommand extends TrashCommand {
                 return true;
             }
             player.teleport(world.getSpawnLocation());
-            MessageUtil.sendMessage(player, ChatColor.GREEN + "Teleported!");
+            MessageUtil.sendMessage(player, ChatColor.GOLD + "Teleported!");
         }
         return true;
     }

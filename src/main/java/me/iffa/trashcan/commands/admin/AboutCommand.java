@@ -41,8 +41,9 @@ public class AboutCommand extends TrashCommand {
             // Credits
             if (args[0].equalsIgnoreCase("credits")) {
                 MessageUtil.sendMessage(cs, ChatColor.GOLD + " TrashCan Credits:");
-                MessageUtil.sendMessage(cs, ChatColor.GRAY + "   - iffa - creator of TrashCan");
-                MessageUtil.sendMessage(cs, ChatColor.GRAY + "   - CainFoool - creator of CommandBin");
+                MessageUtil.sendMessage(cs, ChatColor.GRAY + "   - iffa" + ChatColor.GOLD + " - " + ChatColor.GRAY + "creator of TrashCan");
+                MessageUtil.sendMessage(cs, ChatColor.GRAY + "   - CainFoool" + ChatColor.GOLD + " - " + ChatColor.GRAY + "creator of CommandBin");
+                MessageUtil.sendMessage(cs, ChatColor.GOLD + "   - and finally all of " + ChatColor.GRAY + "#bananacode" + ChatColor.GOLD + "!");
                 return true;
             } else if (args[0].equalsIgnoreCase("reload")) {
                 if (!cs.hasPermission("trashcan.admin.reload")) {
@@ -50,7 +51,7 @@ public class AboutCommand extends TrashCommand {
                     return true;
                 }
                 if (TrashCan.getConfigHandler().reload(ConfigFile.CONFIG)) {
-                    MessageUtil.sendMessage(cs, ChatColor.GREEN + "TrashCan has been reloaded.");
+                    MessageUtil.sendMessage(cs, ChatColor.GOLD + "TrashCan has been reloaded.");
                 } else {
                     MessageUtil.sendMessage(cs, ChatColor.RED + "Something went wrong while reloading TrashCan!");
                 }

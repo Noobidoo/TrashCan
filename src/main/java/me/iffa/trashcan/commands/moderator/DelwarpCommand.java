@@ -43,7 +43,7 @@ public class DelwarpCommand extends TrashCommand {
                 return true;
             }
             TrashCan.getConfigHandler().removeWarp(args[0]);
-            MessageUtil.sendMessage(cs, ChatColor.GREEN + "Warp '" + args[0] + "' has been deleted!");
+            MessageUtil.sendMessage(cs, ChatColor.GOLD + "Warp '" + args[0] + "' has been deleted!");
             return true;
         }
     }

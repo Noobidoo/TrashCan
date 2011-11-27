@@ -1,5 +1,5 @@
 // Package Declaration
-package me.iffa.trashcan.commands.moderator;
+package me.iffa.trashcan.commands.fun;
 
 // TrashCan Imports
 import me.iffa.trashcan.commands.TrashCommand;
@@ -12,18 +12,18 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 /**
- * Represents /kill.
+ * Represents /strike.
  * TrashCan license: http://creativecommons.org/licenses/by-nc-nd/3.0/
  * 
  * @author iffamies
  */
-public class KillCommand extends TrashCommand {
+public class StrikeCommand extends TrashCommand {
     /**
-     * Constructor of KillCommand.
+     * Constructor of StrikeCommand.
      * 
      * @param label Command label
      */
-    public KillCommand(String label) {
+    public StrikeCommand(String label) {
         super(label);
     }
 
@@ -32,7 +32,7 @@ public class KillCommand extends TrashCommand {
      */
     @Override
     public boolean executeCommand(CommandSender cs, String[] args) {
-        if (!cs.hasPermission("trashcan.moderation.kill")) {
+        if (!cs.hasPermission("trashcan.fun.strike")) {
             MessageUtil.sendMessage(cs, ChatColor.RED + "You don't have permission!");
             return true;
         }
@@ -44,8 +44,8 @@ public class KillCommand extends TrashCommand {
             MessageUtil.sendMessage(cs, ChatColor.RED + "The player was not found!");
             return true;
         }
-        target.setHealth(0);
-        MessageUtil.sendMessage(cs, ChatColor.GOLD + "'" + target.getName() + "' was killed!");
+        target.getWorld().strikeLightning(target.getLocation());
+        Bukkit.broadcastMessage(ChatColor.GOLD + "Thor has punished '" + target.getName() + "'!");
         return true;
     }
 
@@ -54,7 +54,7 @@ public class KillCommand extends TrashCommand {
      */
     @Override
     public void sendUsage(CommandSender cs) {
-        MessageUtil.sendMessage(cs, ChatColor.GRAY + "Usage: /kill <player>");
+        MessageUtil.sendMessage(cs, ChatColor.GRAY + "Usage: /strike <player>");
     }
     
 }

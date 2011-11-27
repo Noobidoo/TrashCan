@@ -54,7 +54,7 @@ public class ExplodeCommand extends TrashCommand {
             }
         }
         target.getWorld().createExplosion(target.getLocation(), radius);
-        MessageUtil.sendMessage(cs, ChatColor.GREEN + "'" + target.getName() + "' was blown to pieces!");
+        MessageUtil.sendMessage(cs, ChatColor.GOLD + "'" + target.getName() + "' was blown to pieces!");
         return true;
     }
 

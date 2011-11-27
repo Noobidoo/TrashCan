@@ -3,12 +3,14 @@
 # NOTE: Custom messages support &-color codes. http://www.minecraftwiki.net/wiki/Classic_server_protocol#Color_Codes
 # TrashCan license: http://creativecommons.org/licenses/by-nc-nd/3.0/
 settings:
-  # Message to send when using /shutdown
+  # Message to send when using /shutdown.
   shutdownmessage: '&cThe server is going down for shutdown!'
-  # True if kicks should be broadcasted
+  # True if kicks should be broadcasted.
   broadcastkick: true
-  # True if bans should be broadcasted
+  # True if bans should be broadcasted.
   broadcastban: true
+  # True if commands should be logged to the server log.
+  log-commands: true
   # Message to send when a player is muted (and tries to talk)
   playerismuted: '&cYou are muted, shh!'
   # Message to send when a player is not allowed to use commands.

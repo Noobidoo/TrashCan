@@ -49,7 +49,7 @@ public class SethomeCommand extends TrashCommand {
                 return true;
             }
             TrashCan.getConfigHandler().setHome(player, player.getLocation(), args[0]);
-            MessageUtil.sendMessage(player, ChatColor.GREEN + "Home with name '" + args[0] + "' has been set!");
+            MessageUtil.sendMessage(player, ChatColor.GOLD + "Home with name '" + args[0] + "' has been set!");
             return true;
         }
     }

@@ -360,6 +360,10 @@ public class ConfigHandler {
         return config.get(ConfigFile.CONFIG).getBoolean("bannedips." + ipStrip, false);
     }
     
+    public boolean getLogCommands() {
+        return config.get(ConfigFile.CONFIG).getBoolean("settings.log-commands", true);
+    }
+    
     public boolean getIPBanned(String address) {
         String ipStrip = address.replace(".", "");
         return config.get(ConfigFile.CONFIG).getBoolean("bannedips." + ipStrip, false);
@@ -377,6 +381,18 @@ public class ConfigHandler {
         double y = config.get(ConfigFile.CONFIG).getDouble(player.getName() + ".home." + home + ".y");
         double z = config.get(ConfigFile.CONFIG).getDouble(player.getName() + ".home." + home + ".z");
         String w = config.get(ConfigFile.CONFIG).getString(player.getName() + ".home." + home + ".world");
+        World world = Bukkit.getWorld(w);
+        return new Location(world, x, y, z);
+    }
+    
+    public Location getSingleHome(Player player) {
+        if (!config.get(ConfigFile.CONFIG).contains(player.getName() + ".home")) {
+            return null;
+        }
+        double x = config.get(ConfigFile.CONFIG).getDouble(player.getName() + ".home.x");
+        double y = config.get(ConfigFile.CONFIG).getDouble(player.getName() + ".home.y");
+        double z = config.get(ConfigFile.CONFIG).getDouble(player.getName() + ".home.z");
+        String w = config.get(ConfigFile.CONFIG).getString(player.getName() + ".home.world");
         World world = Bukkit.getWorld(w);
         return new Location(world, x, y, z);
     }

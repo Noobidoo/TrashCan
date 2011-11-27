@@ -17,36 +17,59 @@ import me.iffa.trashcan.commands.admin.AboutCommand;
 import me.iffa.trashcan.commands.admin.CreateworldCommand;
 import me.iffa.trashcan.commands.admin.DebugCommand;
 import me.iffa.trashcan.commands.admin.PaidCommand;
+import me.iffa.trashcan.commands.admin.SetspawnCommand;
 import me.iffa.trashcan.commands.admin.ShutdownCommand;
+import me.iffa.trashcan.commands.admin.TimeCommand;
 import me.iffa.trashcan.commands.admin.UnloadworldCommand;
 import me.iffa.trashcan.commands.admin.WeatherCommand;
 import me.iffa.trashcan.commands.admin.WhoCommand;
 import me.iffa.trashcan.commands.fun.CrossbowCommand;
+import me.iffa.trashcan.commands.fun.ExplodeCommand;
 import me.iffa.trashcan.commands.fun.ExplosionBowCommand;
+import me.iffa.trashcan.commands.fun.ExplosionstickCommand;
 import me.iffa.trashcan.commands.fun.FacepalmCommand;
 import me.iffa.trashcan.commands.fun.JoinCommand;
 import me.iffa.trashcan.commands.fun.LeaveCommand;
+import me.iffa.trashcan.commands.fun.LightCommand;
+import me.iffa.trashcan.commands.fun.LightningstickCommand;
+import me.iffa.trashcan.commands.fun.RollCommand;
+import me.iffa.trashcan.commands.fun.ShootCommand;
+import me.iffa.trashcan.commands.fun.SmokeCommand;
 import me.iffa.trashcan.commands.fun.SnowmanCommand;
+import me.iffa.trashcan.commands.fun.StrikeCommand;
 import me.iffa.trashcan.commands.fun.TorchbowCommand;
 import me.iffa.trashcan.commands.general.CreativeCommand;
+import me.iffa.trashcan.commands.general.FeedCommand;
+import me.iffa.trashcan.commands.general.HealCommand;
 import me.iffa.trashcan.commands.general.HelpCommand;
 import me.iffa.trashcan.commands.general.HomeCommand;
 import me.iffa.trashcan.commands.general.ItemCommand;
 import me.iffa.trashcan.commands.general.MOTDCommand;
 import me.iffa.trashcan.commands.general.MeCommand;
 import me.iffa.trashcan.commands.general.MoreCommand;
+import me.iffa.trashcan.commands.general.MytimeCommand;
 import me.iffa.trashcan.commands.general.NickCommand;
+import me.iffa.trashcan.commands.general.PutCommand;
 import me.iffa.trashcan.commands.general.SethomeCommand;
+import me.iffa.trashcan.commands.general.SetxpCommand;
+import me.iffa.trashcan.commands.general.SpawnCommand;
 import me.iffa.trashcan.commands.general.SpawnmobCommand;
 import me.iffa.trashcan.commands.general.SurvivalCommand;
+import me.iffa.trashcan.commands.general.UnlimitedCommand;
+import me.iffa.trashcan.commands.general.UpCommand;
 import me.iffa.trashcan.commands.general.UsageCommand;
 import me.iffa.trashcan.commands.general.WarpCommand;
+import me.iffa.trashcan.commands.general.tp.TeleportCommand;
+import me.iffa.trashcan.commands.general.tp.TeleportallCommand;
+import me.iffa.trashcan.commands.general.tp.TeleporthereCommand;
+import me.iffa.trashcan.commands.general.tp.TeleportworldCommand;
 import me.iffa.trashcan.commands.moderator.BanCommand;
 import me.iffa.trashcan.commands.moderator.BanIPCommand;
 import me.iffa.trashcan.commands.moderator.DelwarpCommand;
 import me.iffa.trashcan.commands.moderator.FreezeCommand;
 import me.iffa.trashcan.commands.moderator.HandicapCommand;
 import me.iffa.trashcan.commands.moderator.KickCommand;
+import me.iffa.trashcan.commands.moderator.KillCommand;
 import me.iffa.trashcan.commands.moderator.MuteCommand;
 import me.iffa.trashcan.commands.moderator.SetwarpCommand;
 import me.iffa.trashcan.commands.moderator.UnbanCommand;
@@ -107,6 +130,8 @@ public abstract class TrashCommand {
         commands.put("createworld", new CreateworldCommand("createworld"));
         commands.put("unloadworld", new UnloadworldCommand("unloadworld"));
         commands.put("weather", new WeatherCommand("weather"));
+        commands.put("time", new TimeCommand("time"));
+        commands.put("setspawn", new SetspawnCommand("setspawn"));
         
         // General commands
         commands.put("motd", new MOTDCommand("motd"));
@@ -116,13 +141,26 @@ public abstract class TrashCommand {
         commands.put("spawnmob", new SpawnmobCommand("spawnmob"));
         // TODO: Add command for non-multihome /home
         commands.put("home", TrashCan.getConfigHandler().getMultiHomes() ? new HomeCommand("home") : null);
-        commands.put("sethome", new SethomeCommand("sethome"));
+        // TODO: Add command for non-multihome /sethome
+        commands.put("sethome", TrashCan.getConfigHandler().getMultiHomes() ? new SethomeCommand("sethome") : null);
         commands.put("nick", new NickCommand("nick"));
         commands.put("warp", new WarpCommand("warp"));
         commands.put("usage", new UsageCommand("usage"));
         commands.put("help", new HelpCommand("help"));
         commands.put("item", new ItemCommand("item"));
         commands.put("more", new MoreCommand("more"));
+        commands.put("feed", new FeedCommand("feed"));
+        commands.put("heal", new HealCommand("heal"));
+        commands.put("setxp", new SetxpCommand("setxp"));
+        commands.put("mytime", new MytimeCommand("mytime"));
+        commands.put("up", new UpCommand("up"));
+        commands.put("unlimited", new UnlimitedCommand("unlimited"));
+        commands.put("put", new PutCommand("put"));
+        commands.put("spawn", new SpawnCommand("spawn"));
+        commands.put("tp", new TeleportCommand("tp"));
+        commands.put("tpall", new TeleportallCommand("tpall"));
+        commands.put("tphere", new TeleporthereCommand("tphere"));
+        commands.put("tpworld", new TeleportworldCommand("tpworld"));
         
         // Fun commands
         commands.put("crossbow", new CrossbowCommand("crossbow"));
@@ -132,6 +170,14 @@ public abstract class TrashCommand {
         commands.put("leave", new LeaveCommand("leave"));
         commands.put("facepalm", new FacepalmCommand("facepalm"));
         commands.put("snowman", new SnowmanCommand("snowman"));
+        commands.put("explode", new ExplodeCommand("explode"));
+        commands.put("light", new LightCommand("light"));
+        commands.put("roll", new RollCommand("roll"));
+        commands.put("lightningstick", new LightningstickCommand("lightningstick"));
+        commands.put("explosionstick", new ExplosionstickCommand("explosionstick"));
+        commands.put("smoke", new SmokeCommand("smoke"));
+        commands.put("strike", new StrikeCommand("strike"));
+        commands.put("shoot", new ShootCommand("shoot"));
         
         // Moderating commands
         commands.put("kick", new KickCommand("kick"));
@@ -144,6 +190,7 @@ public abstract class TrashCommand {
         commands.put("handicap", new HandicapCommand("handicap"));
         commands.put("setwarp", new SetwarpCommand("setwarp"));
         commands.put("delwarp", new DelwarpCommand("delwarp"));
+        commands.put("kill", new KillCommand("kill"));
         
         // Adding each command to the List of all commands.
         for (String cmd : commands.keySet()) {

@@ -45,7 +45,7 @@ public class UnloadworldCommand extends TrashCommand {
                 return true;
             }
             Bukkit.unloadWorld(world, true);
-            MessageUtil.sendMessage(cs, ChatColor.GREEN + "Unloaded world '" + world.getName() + "'.");
+            MessageUtil.sendMessage(cs, ChatColor.GOLD + "Unloaded world '" + world.getName() + "'.");
             return true;
         }
     }

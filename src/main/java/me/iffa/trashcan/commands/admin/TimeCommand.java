@@ -45,10 +45,10 @@ public class TimeCommand extends TrashCommand {
         }
         if (args[0].equalsIgnoreCase("day")) {
             player.getWorld().setTime(0);
-            MessageUtil.sendMessage(player, ChatColor.GREEN + "Changed time of '" + player.getWorld() + "' to day!");
+            MessageUtil.sendMessage(player, ChatColor.GOLD + "Changed time of '" + player.getWorld() + "' to day!");
         } else if (args[0].equalsIgnoreCase("night")) {
             player.getWorld().setTime(13801);
-            MessageUtil.sendMessage(player, ChatColor.GREEN + "Changed time of '" + player.getWorld() + "' to night!");
+            MessageUtil.sendMessage(player, ChatColor.GOLD + "Changed time of '" + player.getWorld() + "' to night!");
         } else {
             return false;
         }

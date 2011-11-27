@@ -46,7 +46,7 @@ public class ShootCommand extends TrashCommand {
                 return true;
             }
             target.setVelocity(new Vector(0, 64, 0));
-            MessageUtil.sendMessage(cs, ChatColor.GREEN + "'" + target.getName() + "' has been shot into the air!");
+            MessageUtil.sendMessage(cs, ChatColor.GOLD + "'" + target.getName() + "' has been shot into the air!");
             return true;
         }
     }

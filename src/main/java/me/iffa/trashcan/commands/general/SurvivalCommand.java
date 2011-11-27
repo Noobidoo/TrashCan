@@ -48,7 +48,7 @@ public class SurvivalCommand extends TrashCommand {
                 return true;
             }
             player.setGameMode(GameMode.SURVIVAL);
-            MessageUtil.sendMessage(player, ChatColor.GREEN + "You're now playing survival!");
+            MessageUtil.sendMessage(player, ChatColor.GOLD + "You're now playing survival!");
         } else {
             if (!cs.hasPermission("trashcan.general.survival.others")) {
                 MessageUtil.sendMessage(cs, ChatColor.RED + "You don't have permission!");
@@ -65,8 +65,8 @@ public class SurvivalCommand extends TrashCommand {
                 return true;
             }
             target.setGameMode(GameMode.SURVIVAL);
-            MessageUtil.sendMessage(cs, ChatColor.GREEN + "'" + target.getName() + "' is now playing survival!");
-            MessageUtil.sendMessage(target, ChatColor.GREEN + "You're now playing survival!");
+            MessageUtil.sendMessage(cs, ChatColor.GOLD + "'" + target.getName() + "' is now playing survival!");
+            MessageUtil.sendMessage(target, ChatColor.GOLD + "You're now playing survival!");
         }
         return true;
     }

@@ -51,7 +51,7 @@ public class TeleportCommand extends TrashCommand {
                     return true;
                 }
                 player.teleport(target);
-                MessageUtil.sendMessage(player, ChatColor.GREEN + "Teleported!");
+                MessageUtil.sendMessage(player, ChatColor.GOLD + "Teleported!");
                 return true;
             } else {
                 if (!cs.hasPermission("trashcan.general.tp")) {
@@ -69,7 +69,7 @@ public class TeleportCommand extends TrashCommand {
                     return true;
                 }
                 from.teleport(target);
-                MessageUtil.sendMessage(cs, ChatColor.GREEN + "Teleported '" + from.getName() + "' to '" + target.getName() + "'!");
+                MessageUtil.sendMessage(cs, ChatColor.GOLD + "Teleported '" + from.getName() + "' to '" + target.getName() + "'!");
                 return true;
             }
         }

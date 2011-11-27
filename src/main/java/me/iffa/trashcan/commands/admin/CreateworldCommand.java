@@ -48,7 +48,7 @@ public class CreateworldCommand extends TrashCommand {
                     return true;
                 }
                 Bukkit.createWorld(new WorldCreator(args[0]).environment(World.Environment.NORMAL));
-                MessageUtil.sendMessage(cs, ChatColor.GREEN + "Created world '" + args[0] + "'.");
+                MessageUtil.sendMessage(cs, ChatColor.GOLD + "Created world '" + args[0] + "'.");
                 return true;
             } else {
                 if (Bukkit.getWorld(args[0]) != null) {
@@ -61,7 +61,7 @@ public class CreateworldCommand extends TrashCommand {
                     return true;
                 }
                 Bukkit.createWorld(new WorldCreator(args[0]).environment(environment));
-                MessageUtil.sendMessage(cs, ChatColor.GREEN + "Created world '" + args[0] + "' with environment '" + args[1] + "'.");
+                MessageUtil.sendMessage(cs, ChatColor.GOLD + "Created world '" + args[0] + "' with environment '" + args[1] + "'.");
                 return true;
             }
         }

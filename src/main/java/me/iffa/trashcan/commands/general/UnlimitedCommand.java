@@ -44,9 +44,9 @@ public class UnlimitedCommand extends TrashCommand {
             }
             TrashCan.getConfigHandler().setUnlimited(!TrashCan.getConfigHandler().getUnlimited((Player)cs), (Player)cs);
             if (TrashCan.getConfigHandler().getUnlimited((Player)cs)) {
-                MessageUtil.sendMessage(cs, ChatColor.GREEN + "Unlimited drops has been enabled for you!");
+                MessageUtil.sendMessage(cs, ChatColor.GOLD + "Unlimited drops has been enabled for you!");
             } else {
-                MessageUtil.sendMessage(cs, ChatColor.GREEN + "Unlimited drops has been disabled for you!");
+                MessageUtil.sendMessage(cs, ChatColor.GOLD + "Unlimited drops has been disabled for you!");
             }
             return true;
         } else {
@@ -61,11 +61,11 @@ public class UnlimitedCommand extends TrashCommand {
             }
             TrashCan.getConfigHandler().setUnlimited(!TrashCan.getConfigHandler().getUnlimited(target), target);
             if (TrashCan.getConfigHandler().getUnlimited(target)) {
-                MessageUtil.sendMessage(target, ChatColor.GREEN + "Unlimited drops has been enabled for you!");
-                MessageUtil.sendMessage(cs, ChatColor.GREEN + "Unlimited drops has been enabled for '" + target.getName() + "'!");
+                MessageUtil.sendMessage(target, ChatColor.GOLD + "Unlimited drops has been enabled for you!");
+                MessageUtil.sendMessage(cs, ChatColor.GOLD + "Unlimited drops has been enabled for '" + target.getName() + "'!");
             } else {
-                MessageUtil.sendMessage(target, ChatColor.GREEN + "Unlimited drops has been disabled for you!");
-                MessageUtil.sendMessage(cs, ChatColor.GREEN + "Unlimited drops has been disabled for '" + target.getName() + "'!");
+                MessageUtil.sendMessage(target, ChatColor.GOLD + "Unlimited drops has been disabled for you!");
+                MessageUtil.sendMessage(cs, ChatColor.GOLD + "Unlimited drops has been disabled for '" + target.getName() + "'!");
             }
             return true;
         }

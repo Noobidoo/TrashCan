@@ -53,8 +53,8 @@ public class PutCommand extends TrashCommand {
         }
         Location targetLoc = player.getLineOfSight(null, 128).get(0).getRelative(BlockFace.UP, 2).getLocation();
         target.teleport(targetLoc);
-        MessageUtil.sendMessage(player, ChatColor.GREEN + "Teleported!");
-        MessageUtil.sendMessage(target, ChatColor.GREEN + "Teleported!");
+        MessageUtil.sendMessage(player, ChatColor.GOLD + "Teleported!");
+        MessageUtil.sendMessage(target, ChatColor.GOLD + "Teleported!");
         return true;
     }
 

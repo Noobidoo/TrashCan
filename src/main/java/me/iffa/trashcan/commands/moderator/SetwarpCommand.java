@@ -49,7 +49,7 @@ public class SetwarpCommand extends TrashCommand {
                 return true;
             }
             TrashCan.getConfigHandler().setWarp(player.getLocation(), args[0]);
-            MessageUtil.sendMessage(player, ChatColor.GREEN + "Warp with name '" + args[0] + "' has been set!");
+            MessageUtil.sendMessage(player, ChatColor.GOLD + "Warp with name '" + args[0] + "' has been set!");
             return true;
         }
     }

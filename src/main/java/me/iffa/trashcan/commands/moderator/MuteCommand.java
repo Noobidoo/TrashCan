@@ -49,7 +49,7 @@ public class MuteCommand extends TrashCommand {
         if (TrashCan.getConfigHandler().getMuted(target)) {
             MessageUtil.sendMessage(target, ChatColor.RED + "You have been muted!");
         } else {
-            MessageUtil.sendMessage(target, ChatColor.GREEN + "You have been unmuted!");
+            MessageUtil.sendMessage(target, ChatColor.GOLD + "You have been unmuted!");
         }
         return true;
     }

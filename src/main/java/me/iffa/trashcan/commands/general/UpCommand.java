@@ -54,7 +54,7 @@ public class UpCommand extends TrashCommand {
         Location to = player.getLocation();
         to.setY(to.getY() + amount);
         player.teleport(to);
-        MessageUtil.sendMessage(player, ChatColor.GREEN + "Teleported!");
+        MessageUtil.sendMessage(player, ChatColor.GOLD + "Teleported!");
         return true;
     }
 

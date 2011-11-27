@@ -55,7 +55,7 @@ public class HomeCommand extends TrashCommand {
                 return true;
             }
             player.teleport(home);
-            MessageUtil.sendMessage(player, ChatColor.GREEN + "You've been teleported to home '" + args[0] + "'!");
+            MessageUtil.sendMessage(player, ChatColor.GOLD + "You've been teleported to home '" + args[0] + "'!");
             return true;
         }
     }

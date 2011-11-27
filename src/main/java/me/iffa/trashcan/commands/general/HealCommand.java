@@ -42,7 +42,7 @@ public class HealCommand extends TrashCommand {
                 return true;
             }
             ((Player)cs).setHealth(20);
-            MessageUtil.sendMessage(cs, ChatColor.GREEN + "You've been healed!");
+            MessageUtil.sendMessage(cs, ChatColor.GOLD + "You've been healed!");
             return true;
         } else {
             if (!cs.hasPermission("trashcan.general.heal.others")) {
@@ -55,8 +55,8 @@ public class HealCommand extends TrashCommand {
                 return true;
             }
             target.setHealth(20);
-            MessageUtil.sendMessage(target, ChatColor.GREEN + "You've been healed!");
-            MessageUtil.sendMessage(cs, ChatColor.GREEN + "'" + target.getName() + "' was healed!");
+            MessageUtil.sendMessage(target, ChatColor.GOLD + "You've been healed!");
+            MessageUtil.sendMessage(cs, ChatColor.GOLD + "'" + target.getName() + "' was healed!");
             return true;
         }
     }

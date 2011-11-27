@@ -34,14 +34,14 @@ public class SnowmanCommand extends TrashCommand {
     public boolean executeCommand(CommandSender cs, String[] args) {
         if (cs.hasPermission("trashcan.fun.snowman")) {
             if (!(cs instanceof Player)) {
-                MessageUtil.sendMessage(cs, TrashCan.getPrefix() + " Sorry, only players can use this command.");
+                MessageUtil.sendMessage(cs, "Sorry, only players can use this command.");
                 return true;
             }
             TrashCan.getConfigHandler().setSnowman(!TrashCan.getConfigHandler().getSnowman((Player)cs), (Player)cs);
             if (TrashCan.getConfigHandler().getSnowman((Player)cs)) {
-                MessageUtil.sendMessage(cs, ChatColor.GREEN + "You are now Frosty The Snowman! Start walking!");
+                MessageUtil.sendMessage(cs, ChatColor.GOLD + "You are now Frosty The Snowman! Start walking!");
             } else {
-                MessageUtil.sendMessage(cs, ChatColor.GREEN + "You are no longer Frosty The Snowman. :(");
+                MessageUtil.sendMessage(cs, ChatColor.GOLD + "You are no longer Frosty The Snowman. :(");
             }
             return true;
         } else {

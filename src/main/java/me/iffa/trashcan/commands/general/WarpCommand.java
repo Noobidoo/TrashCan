@@ -55,7 +55,7 @@ public class WarpCommand extends TrashCommand {
                 return true;
             }
             player.teleport(warp);
-            MessageUtil.sendMessage(player, ChatColor.GREEN + "You've been teleported to warp '" + args[0] + "'!");
+            MessageUtil.sendMessage(player, ChatColor.GOLD + "You've been teleported to warp '" + args[0] + "'!");
             return true;
         }
     }

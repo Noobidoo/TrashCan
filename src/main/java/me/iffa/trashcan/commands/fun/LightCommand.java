@@ -57,7 +57,7 @@ public class LightCommand extends TrashCommand {
         // CommandBin multiplies time by 10, so each "second" is actually half
         // a second. 1 second is 20 ticks.
         target.setFireTicks(time * 20);
-        MessageUtil.sendMessage(cs, ChatColor.GREEN + "'" + target.getName() + "' was lit up!");
+        MessageUtil.sendMessage(cs, ChatColor.GOLD + "'" + target.getName() + "' was lit up!");
         return true;
     }
 

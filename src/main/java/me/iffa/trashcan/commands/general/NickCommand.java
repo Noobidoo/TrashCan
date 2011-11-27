@@ -47,7 +47,8 @@ public class NickCommand extends TrashCommand {
                     return true;
                 }
                 TrashCan.getConfigHandler().setNick(player, args[0]);
-                MessageUtil.sendMessage(cs, ChatColor.GREEN + "Your nickname is now '" + args[0] + "'!");
+                player.setDisplayName(args[0]);
+                MessageUtil.sendMessage(cs, ChatColor.GOLD + "Your nickname is now '" + args[0] + "'!");
                 return true;
             } else {
                 if (!cs.hasPermission("trashcan.general.nick.others")) {
@@ -60,8 +61,9 @@ public class NickCommand extends TrashCommand {
                     return true;
                 }
                 TrashCan.getConfigHandler().setNick(target, args[1]);
-                MessageUtil.sendMessage(target, ChatColor.GREEN + "Your nickname is now '" + args[0] + "'!");
-                MessageUtil.sendMessage(cs, ChatColor.GREEN + "'" + target.getName() + "'s nickname is now '" + args[0] + "'!");
+                target.setDisplayName(args[0]);
+                MessageUtil.sendMessage(target, ChatColor.GOLD + "Your nickname is now '" + args[0] + "'!");
+                MessageUtil.sendMessage(cs, ChatColor.GOLD + "'" + target.getName() + "'s nickname is now '" + args[0] + "'!");
                 return true;
             }
         }

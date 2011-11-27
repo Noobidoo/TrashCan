@@ -51,7 +51,7 @@ public class TeleportworldCommand extends TrashCommand {
             return true;
         }
         player.teleport(world.getSpawnLocation());
-        MessageUtil.sendMessage(player, ChatColor.GREEN + "Teleported!");
+        MessageUtil.sendMessage(player, ChatColor.GOLD + "Teleported!");
         return true;
     }
 

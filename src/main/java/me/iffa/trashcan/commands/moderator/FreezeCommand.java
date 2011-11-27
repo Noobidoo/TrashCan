@@ -49,7 +49,7 @@ public class FreezeCommand extends TrashCommand {
         if (TrashCan.getConfigHandler().getFrozen(target)) {
             MessageUtil.sendMessage(target, ChatColor.RED + "You have been frozen!");
         } else {
-            MessageUtil.sendMessage(target, ChatColor.GREEN + "You have been unfrozen!");
+            MessageUtil.sendMessage(target, ChatColor.GOLD + "You have been unfrozen!");
         }
         return true;
     }

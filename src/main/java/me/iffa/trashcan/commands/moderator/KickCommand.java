@@ -48,7 +48,7 @@ public class KickCommand extends TrashCommand {
             } 
             Player target = Bukkit.getPlayer(args[0]);
             target.kickPlayer("You've been kicked.");
-            MessageUtil.sendMessage(cs, ChatColor.GREEN + "The player '" + target.getName() + "' has been kicked.");
+            MessageUtil.sendMessage(cs, ChatColor.GOLD + "The player '" + target.getName() + "' has been kicked.");
             if (TrashCan.getConfigHandler().getBroadcastKick()) {
                 Bukkit.broadcastMessage(ChatColor.RED + "'" + target.getName() + "' has been kicked. Reason: Unspecified");
             }
@@ -64,7 +64,7 @@ public class KickCommand extends TrashCommand {
                 reason = reason + " " + args[arg];
             }
             target.kickPlayer("You've been kicked:" + reason);
-            MessageUtil.sendMessage(cs, ChatColor.GREEN + "The player '" + target.getName() + "' has been kicked.");
+            MessageUtil.sendMessage(cs, ChatColor.GOLD + "The player '" + target.getName() + "' has been kicked.");
             if (TrashCan.getConfigHandler().getBroadcastKick()) {
                 Bukkit.broadcastMessage(ChatColor.RED + "'" + target.getName() + "' has been kicked. Reason:" + reason);
             }

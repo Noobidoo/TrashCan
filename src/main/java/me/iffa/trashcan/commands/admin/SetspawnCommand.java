@@ -43,7 +43,7 @@ public class SetspawnCommand extends TrashCommand {
         Player player = (Player) cs;
         Location location = player.getLocation();
         player.getWorld().setSpawnLocation((int)location.getX(), (int)location.getY(), (int)location.getZ());
-        MessageUtil.sendMessage(player, ChatColor.GREEN + "New spawn has been set!");
+        MessageUtil.sendMessage(player, ChatColor.GOLD + "New spawn has been set!");
         return true;
     }
 

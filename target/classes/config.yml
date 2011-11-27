@@ -1,25 +1,30 @@
 # TrashCan main configuration file
 # Now CommandBin config had little to none documentation so I'll just do it here.
 # NOTE: Custom messages support &-color codes. http://www.minecraftwiki.net/wiki/Classic_server_protocol#Color_Codes
+# TrashCan license: http://creativecommons.org/licenses/by-nc-nd/3.0/
 settings:
-  # Message to send when using /shutdown
+  # Message to send when using /shutdown.
   shutdownmessage: '&cThe server is going down for shutdown!'
-  # True if kicks should be broadcasted
+  # True if kicks should be broadcasted.
   broadcastkick: true
-  # True if bans should be broadcasted
+  # True if bans should be broadcasted.
   broadcastban: true
+  # True if commands should be logged to the server log.
+  log-commands: true
   # Message to send when a player is muted (and tries to talk)
   playerismuted: '&cYou are muted, shh!'
   # Message to send when a player is not allowed to use commands.
   playercannotusecommands: '&cYou cannot use commands.'
   # Join message to send
-  joinmessage: '&ehas joined the game'
+  joinmessage: 'has joined the game'
   # Leave message to send
-  leavemessage: '&ehas left the game'
+  leavemessage: 'has left the game'
   # True if XP should be dropped on death
   dropxpondeath: false
   # Maximum amount of mobs that can be spawned once with /spawnmob
   spawn-mob-max-amount: 10
+  # True if spawned (/spawnmob) wolves should be tamed automatically
+  tame-spawned-wolves: true
   # True if Endermen are allowed to grief (pick up blocks and place them)
   endermangriefing: false
   # Basic protection settings

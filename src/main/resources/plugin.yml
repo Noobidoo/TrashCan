@@ -53,7 +53,7 @@ commands:
        # Done - perms: trashcan.fun.shoot
    shoot:
        description: 'Shoot a player into the air.'
-       # Working on - perms: trashcan.fun.strike
+       # Done - perms: trashcan.fun.strike
    strike:
        description: 'Strike a player.'
        # Done - perms: trashcan.admin.time
@@ -200,3 +200,6 @@ commands:
        # Done - perms: trashcan.general.more
    more:
        description: 'Give some more of this!'
+       # Done - perms: trashcan.admin.debug
+   debug:
+       description: 'Show debugging information.'

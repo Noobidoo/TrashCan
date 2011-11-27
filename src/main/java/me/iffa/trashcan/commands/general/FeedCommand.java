@@ -42,7 +42,7 @@ public class FeedCommand extends TrashCommand {
                 return true;
             }
             ((Player)cs).setFoodLevel(20);
-            MessageUtil.sendMessage(cs, ChatColor.GREEN + "You've been fed!");
+            MessageUtil.sendMessage(cs, ChatColor.GOLD + "You've been fed!");
             return true;
         } else {
             if (!cs.hasPermission("trashcan.general.feed.others")) {
@@ -55,8 +55,8 @@ public class FeedCommand extends TrashCommand {
                 return true;
             }
             target.setFoodLevel(20);
-            MessageUtil.sendMessage(target, ChatColor.GREEN + "You've been fed!");
-            MessageUtil.sendMessage(cs, ChatColor.GREEN + "'" + target.getName() + "' was fed!");
+            MessageUtil.sendMessage(target, ChatColor.GOLD + "You've been fed!");
+            MessageUtil.sendMessage(cs, ChatColor.GOLD + "'" + target.getName() + "' was fed!");
             return true;
         }
     }

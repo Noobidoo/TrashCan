@@ -46,7 +46,7 @@ public class TeleportallCommand extends TrashCommand {
                 target.teleport(player);
             }
         }
-        MessageUtil.sendMessage(player, ChatColor.GREEN + "Teleported!");
+        MessageUtil.sendMessage(player, ChatColor.GOLD + "Teleported!");
         return true;
     }
 
