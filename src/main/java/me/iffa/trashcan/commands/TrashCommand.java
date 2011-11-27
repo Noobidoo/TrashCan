@@ -39,12 +39,14 @@ import me.iffa.trashcan.commands.fun.SmokeCommand;
 import me.iffa.trashcan.commands.fun.SnowmanCommand;
 import me.iffa.trashcan.commands.fun.StrikeCommand;
 import me.iffa.trashcan.commands.fun.TorchbowCommand;
+import me.iffa.trashcan.commands.general.ArmorCommand;
 import me.iffa.trashcan.commands.general.ClearCommand;
 import me.iffa.trashcan.commands.general.CreativeCommand;
 import me.iffa.trashcan.commands.general.FeedCommand;
 import me.iffa.trashcan.commands.general.HealCommand;
 import me.iffa.trashcan.commands.general.HelpCommand;
 import me.iffa.trashcan.commands.general.HomeCommand;
+import me.iffa.trashcan.commands.general.HomeCommand2;
 import me.iffa.trashcan.commands.general.ItemCommand;
 import me.iffa.trashcan.commands.general.MOTDCommand;
 import me.iffa.trashcan.commands.general.MeCommand;
@@ -54,6 +56,7 @@ import me.iffa.trashcan.commands.general.MytimeCommand;
 import me.iffa.trashcan.commands.general.NickCommand;
 import me.iffa.trashcan.commands.general.PutCommand;
 import me.iffa.trashcan.commands.general.SethomeCommand;
+import me.iffa.trashcan.commands.general.SethomeCommand2;
 import me.iffa.trashcan.commands.general.SetxpCommand;
 import me.iffa.trashcan.commands.general.SpawnCommand;
 import me.iffa.trashcan.commands.general.SpawnmobCommand;
@@ -143,9 +146,9 @@ public abstract class TrashCommand {
         commands.put("survival", new SurvivalCommand("survival"));
         commands.put("spawnmob", new SpawnmobCommand("spawnmob"));
         // TODO: Add command for non-multihome /home
-        commands.put("home", TrashCan.getConfigHandler().getMultiHomes() ? new HomeCommand("home") : null);
+        commands.put("home", TrashCan.getConfigHandler().getMultiHomes() ? new HomeCommand("home") : new HomeCommand2("home"));
         // TODO: Add command for non-multihome /sethome
-        commands.put("sethome", TrashCan.getConfigHandler().getMultiHomes() ? new SethomeCommand("sethome") : null);
+        commands.put("sethome", TrashCan.getConfigHandler().getMultiHomes() ? new SethomeCommand("sethome") : new SethomeCommand2("sethome"));
         commands.put("nick", new NickCommand("nick"));
         commands.put("warp", new WarpCommand("warp"));
         commands.put("usage", new UsageCommand("usage"));
@@ -166,6 +169,7 @@ public abstract class TrashCommand {
         commands.put("msg", new MsgCommand("msg"));
         commands.put("tpworld", new TeleportworldCommand("tpworld"));
         commands.put("clear", new ClearCommand("clear"));
+        commands.put("armor", new ArmorCommand("armor"));
         
         // Fun commands
         commands.put("crossbow", new CrossbowCommand("crossbow"));

@@ -113,6 +113,7 @@ commands:
        # Done - perms: trashcan.fun.lightningstick
    lightningstick:
        description: 'The lightning stick!'
+       # Done - perms: trashcan.fun.slap
    slap:
        description: 'Slap a player.'
        # Done - perms: trashcan.general.clear
@@ -127,7 +128,7 @@ commands:
        # Done (originally /i) - perms: trashcan.general.item
    item:
        description: 'Get an item.'
-       aliases: i
+       aliases: [i]
        # Done - perms: trashcan.general.msg
    msg:
        description: 'Message a player.'

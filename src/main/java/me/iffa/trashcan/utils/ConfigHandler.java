@@ -675,6 +675,24 @@ public class ConfigHandler {
     }
     
     /**
+     * Sets a new home for a player.
+     * 
+     * @param player Player
+     * @param location Home location
+     */
+    public void setHome(Player player, Location location) {
+        config.get(ConfigFile.CONFIG).set(player.getName() + ".home.x", location.getX());
+        config.get(ConfigFile.CONFIG).set(player.getName() + ".home.y", location.getY());
+        config.get(ConfigFile.CONFIG).set(player.getName() + ".home.z", location.getZ());
+        config.get(ConfigFile.CONFIG).set(player.getName() + ".home.world", location.getWorld().getName());
+        try {
+            config.get(ConfigFile.CONFIG).save(file.get(ConfigFile.CONFIG));
+        } catch (IOException ex) {
+            LoggerUtil.log(Level.WARNING, "Problem while setting player specific setting: " + ex.toString());
+        }
+    }
+    
+    /**
      * Sets a new warp.
      * 
      * @param location Warp location
