@@ -104,8 +104,10 @@ commands:
        description: 'Mute a player.'
    smoke:
        description: 'Become the walking chimney.'
+       # Done - perms: trashcan.fun.explosionstick
    explosionstick:
        description: 'The explosion stick!'
+       # Done - perms: trashcan.fun.lightningstick
    lightningstick:
        description: 'The lightning stick!'
    slap:
@@ -147,12 +149,12 @@ commands:
        # Done - perms: trashcan.moderation.kill
    kill:
        description: 'Kill a player.'
+       # Done - perms: trashcan.general.up
    up:
        description: 'Go up X amount of blocks.'
+       # Working on (delunlimited is in this) - perms: trashcan.general.unlimited
    unlimited:
        description: 'Unlimited amount of blocks.'
-   delunlimited:
-       description: 'Remove unlimited blocks.'
        # Done - perms: trashcan.fun.torchbow
    torchbow:
        description: 'Toggle torchbow.'

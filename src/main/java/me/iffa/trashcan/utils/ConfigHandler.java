@@ -364,6 +364,10 @@ public class ConfigHandler {
         return config.get(ConfigFile.CONFIG).getBoolean("bannedips." + ipStrip, false);
     }
     
+    public boolean getTameSpawnedWolves() {
+        return config.get(ConfigFile.CONFIG).getBoolean("settings.tame-spawned-wolves", true);
+    }
+    
     public Location getHome(String home, Player player) {
         if (!config.get(ConfigFile.CONFIG).contains(player.getName() + ".home." + home)) {
             return null;
@@ -507,6 +511,36 @@ public class ConfigHandler {
      */
     public void setTorchbow(boolean enabled, Player player) {
         config.get(ConfigFile.CONFIG).set(player.getName() + ".torchbow", enabled);
+        try {
+            config.get(ConfigFile.CONFIG).save(file.get(ConfigFile.CONFIG));
+        } catch (IOException ex) {
+            LoggerUtil.log(Level.WARNING, "Problem while toggling player specific setting: " + ex.toString());
+        }
+    }
+    
+    /**
+     * Sets the lightningstick enabled-state for a player.
+     * 
+     * @param enabled Enabled true/false
+     * @param player Player to set
+     */
+    public void setLightningstick(boolean enabled, Player player) {
+        config.get(ConfigFile.CONFIG).set(player.getName() + ".lightningstick", enabled);
+        try {
+            config.get(ConfigFile.CONFIG).save(file.get(ConfigFile.CONFIG));
+        } catch (IOException ex) {
+            LoggerUtil.log(Level.WARNING, "Problem while toggling player specific setting: " + ex.toString());
+        }
+    }
+    
+    /**
+     * Sets the explosionstick enabled-state for a player.
+     * 
+     * @param enabled Enabled true/false
+     * @param player Player to set
+     */
+    public void setExplosionstick(boolean enabled, Player player) {
+        config.get(ConfigFile.CONFIG).set(player.getName() + ".explosionstick", enabled);
         try {
             config.get(ConfigFile.CONFIG).save(file.get(ConfigFile.CONFIG));
         } catch (IOException ex) {

@@ -20,6 +20,8 @@ settings:
   dropxpondeath: false
   # Maximum amount of mobs that can be spawned once with /spawnmob
   spawn-mob-max-amount: 10
+  # True if spawned (/spawnmob) wolves should be tamed automatically
+  tame-spawned-wolves: true
   # True if Endermen are allowed to grief (pick up blocks and place them)
   endermangriefing: false
   # Basic protection settings

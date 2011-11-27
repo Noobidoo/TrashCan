@@ -11,7 +11,9 @@ import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.CreatureType;
+import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
+import org.bukkit.entity.Wolf;
 
 /**
  * Represents /spawnmob.
@@ -53,7 +55,12 @@ public class SpawnmobCommand extends TrashCommand {
                 MessageUtil.sendMessage(player, ChatColor.RED + "'" + args[0] + "' is not a mob.");
                 return true;
             }
-            player.getWorld().spawnCreature(spawn, mob);
+            LivingEntity spawnCreature = player.getWorld().spawnCreature(spawn, mob);
+            // "You can't spawn tamed wolves." REMEMBER THAT, BOYS!
+            if (spawnCreature instanceof Wolf && TrashCan.getConfigHandler().getTameSpawnedWolves()) {
+                Wolf wolf = (Wolf) spawnCreature;
+                wolf.setOwner(player);
+            }
             MessageUtil.sendMessage(player, ChatColor.GREEN + "Spawned 1 " + args[0] + ".");
         } else {
             CreatureType mob = CreatureType.fromName(args[0]);
@@ -71,8 +78,12 @@ public class SpawnmobCommand extends TrashCommand {
                 MessageUtil.sendMessage(player, ChatColor.RED + "You can only spawn " + TrashCan.getConfigHandler().getMaxMobAmount() + " mobs at once.");
                 return true;
             }
-            for(int spawned = 0; spawned < amount; spawned++) {
-                player.getWorld().spawnCreature(spawn, mob);
+            for (int spawned = 0; spawned < amount; spawned++) {
+                LivingEntity spawnCreature = player.getWorld().spawnCreature(spawn, mob);
+                if (spawnCreature instanceof Wolf && TrashCan.getConfigHandler().getTameSpawnedWolves()) {
+                    Wolf wolf = (Wolf) spawnCreature;
+                    wolf.setOwner(player);
+                }
             }
             MessageUtil.sendMessage(player, ChatColor.GREEN + "Spawned " + amount + " " + args[0] + "(s).");
         }
@@ -87,5 +98,4 @@ public class SpawnmobCommand extends TrashCommand {
         MessageUtil.sendMessage(cs, ChatColor.GRAY + "Usage: /spawnmob <mob> [amount]");
         MessageUtil.sendMessage(cs, ChatColor.GRAY + "Mobs: chicken, cow, pig, sheep, squid, enderman, pigman, wolf, cavespider, creeper, ghast, silverfish, skeleton, slime, spider, zombie, enderdragon, villager");
     }
-    
 }
