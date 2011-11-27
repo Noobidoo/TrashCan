@@ -152,12 +152,13 @@ commands:
        # Done - perms: trashcan.general.up
    up:
        description: 'Go up X amount of blocks.'
-       # Working on (delunlimited is in this) - perms: trashcan.general.unlimited
+       # Done (delunlimited is in this) - perms: trashcan.general.unlimited
    unlimited:
        description: 'Unlimited amount of blocks.'
        # Done - perms: trashcan.fun.torchbow
    torchbow:
        description: 'Toggle torchbow.'
+       # Done - perms: trashcan.general.mytime
    mytime:
        description: 'Set your time.'
    armor:

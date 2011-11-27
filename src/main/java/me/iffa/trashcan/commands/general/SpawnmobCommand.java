@@ -56,7 +56,7 @@ public class SpawnmobCommand extends TrashCommand {
                 return true;
             }
             LivingEntity spawnCreature = player.getWorld().spawnCreature(spawn, mob);
-            // "You can't spawn tamed wolves." REMEMBER THAT, BOYS!
+            // "You can't spawn tamed wolves."
             if (spawnCreature instanceof Wolf && TrashCan.getConfigHandler().getTameSpawnedWolves()) {
                 Wolf wolf = (Wolf) spawnCreature;
                 wolf.setOwner(player);
@@ -80,6 +80,7 @@ public class SpawnmobCommand extends TrashCommand {
             }
             for (int spawned = 0; spawned < amount; spawned++) {
                 LivingEntity spawnCreature = player.getWorld().spawnCreature(spawn, mob);
+                // "You can't spawn tamed wolves."
                 if (spawnCreature instanceof Wolf && TrashCan.getConfigHandler().getTameSpawnedWolves()) {
                     Wolf wolf = (Wolf) spawnCreature;
                     wolf.setOwner(player);
