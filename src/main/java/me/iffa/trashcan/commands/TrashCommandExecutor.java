@@ -1,8 +1,12 @@
 // Package Declaration
 package me.iffa.trashcan.commands;
 
+// Java Imports
+import java.util.logging.Level;
+
 // TrashCan Imports
 import me.iffa.trashcan.TrashCan;
+import me.iffa.trashcan.utils.LoggerUtil;
 
 // Bukkit Imports
 import org.bukkit.command.Command;
@@ -31,7 +35,14 @@ public class TrashCommandExecutor implements CommandExecutor {
         TrashCommand command = TrashCan.matchCommand(label);
         if (command != null) {
             if (!command.executeCommand(cs, args)) {
+                if (TrashCan.getConfigHandler().getLogCommands()) {
+                    LoggerUtil.log(Level.INFO, cs.getName() + " used command '" + label + "'. Result: success");
+                }
                 command.sendUsage(cs);
+            } else {
+                if (TrashCan.getConfigHandler().getLogCommands()) {
+                    LoggerUtil.log(Level.INFO, cs.getName() + " used command '" + label + "'. Result: failure");
+                }
             }
         }
         return true;
