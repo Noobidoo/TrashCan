@@ -34,10 +34,12 @@ import me.iffa.trashcan.commands.fun.LightCommand;
 import me.iffa.trashcan.commands.fun.LightningstickCommand;
 import me.iffa.trashcan.commands.fun.RollCommand;
 import me.iffa.trashcan.commands.fun.ShootCommand;
+import me.iffa.trashcan.commands.fun.SlapCommand;
 import me.iffa.trashcan.commands.fun.SmokeCommand;
 import me.iffa.trashcan.commands.fun.SnowmanCommand;
 import me.iffa.trashcan.commands.fun.StrikeCommand;
 import me.iffa.trashcan.commands.fun.TorchbowCommand;
+import me.iffa.trashcan.commands.general.ClearCommand;
 import me.iffa.trashcan.commands.general.CreativeCommand;
 import me.iffa.trashcan.commands.general.FeedCommand;
 import me.iffa.trashcan.commands.general.HealCommand;
@@ -47,6 +49,7 @@ import me.iffa.trashcan.commands.general.ItemCommand;
 import me.iffa.trashcan.commands.general.MOTDCommand;
 import me.iffa.trashcan.commands.general.MeCommand;
 import me.iffa.trashcan.commands.general.MoreCommand;
+import me.iffa.trashcan.commands.general.MsgCommand;
 import me.iffa.trashcan.commands.general.MytimeCommand;
 import me.iffa.trashcan.commands.general.NickCommand;
 import me.iffa.trashcan.commands.general.PutCommand;
@@ -160,7 +163,9 @@ public abstract class TrashCommand {
         commands.put("tp", new TeleportCommand("tp"));
         commands.put("tpall", new TeleportallCommand("tpall"));
         commands.put("tphere", new TeleporthereCommand("tphere"));
+        commands.put("msg", new MsgCommand("msg"));
         commands.put("tpworld", new TeleportworldCommand("tpworld"));
+        commands.put("clear", new ClearCommand("clear"));
         
         // Fun commands
         commands.put("crossbow", new CrossbowCommand("crossbow"));
@@ -178,6 +183,7 @@ public abstract class TrashCommand {
         commands.put("smoke", new SmokeCommand("smoke"));
         commands.put("strike", new StrikeCommand("strike"));
         commands.put("shoot", new ShootCommand("shoot"));
+        commands.put("slap", new SlapCommand("slap"));
         
         // Moderating commands
         commands.put("kick", new KickCommand("kick"));

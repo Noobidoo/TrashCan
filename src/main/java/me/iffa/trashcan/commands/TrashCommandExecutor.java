@@ -36,12 +36,12 @@ public class TrashCommandExecutor implements CommandExecutor {
         if (command != null) {
             if (!command.executeCommand(cs, args)) {
                 if (TrashCan.getConfigHandler().getLogCommands()) {
-                    LoggerUtil.log(Level.INFO, cs.getName() + " used command '" + label + "'. Result: success");
+                    LoggerUtil.log(Level.INFO, cs.getName() + " used command '" + label + "'. Result: failure");
                 }
                 command.sendUsage(cs);
             } else {
                 if (TrashCan.getConfigHandler().getLogCommands()) {
-                    LoggerUtil.log(Level.INFO, cs.getName() + " used command '" + label + "'. Result: failure");
+                    LoggerUtil.log(Level.INFO, cs.getName() + " used command '" + label + "'. Result: success");
                 }
             }
         }

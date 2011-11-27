@@ -115,6 +115,7 @@ commands:
        description: 'The lightning stick!'
    slap:
        description: 'Slap a player.'
+       # Done - perms: trashcan.general.clear
    clear:
        description: 'Clear your inventory'
        # Done - perms: trashcan.admin.who, trashcan.admin.who.others
@@ -127,6 +128,7 @@ commands:
    item:
        description: 'Get an item.'
        aliases: i
+       # Done - perms: trashcan.general.msg
    msg:
        description: 'Message a player.'
        # Done - perms: trashcan.general.sethome
