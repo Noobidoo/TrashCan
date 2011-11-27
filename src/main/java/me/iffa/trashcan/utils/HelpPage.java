@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 // Bukkit Imports
+import me.iffa.trashcan.commands.TrashCommand;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 
@@ -46,7 +47,7 @@ public class HelpPage {
      * @param cs Command sender 
      */
     public void sendHelpPage(CommandSender cs) {
-        MessageUtil.sendMessage(cs, ChatColor.GOLD + "/help - page: " + number);
+        MessageUtil.sendMessage(cs, ChatColor.GOLD + "/help - page: " + number + " (out of " + TrashCommand.getCommands().size() / 5 + ")");
         for (String command : commands.keySet()) {
             MessageUtil.sendMessage(cs, ChatColor.GRAY + "/" + command + ChatColor.GOLD + " - " + ChatColor.GRAY + commands.get(command));
         }
