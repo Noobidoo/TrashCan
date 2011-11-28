@@ -109,6 +109,10 @@ public class TrashPlayerListener extends PlayerListener {
                 }
             }
         }
+        
+        if (e.getAction() == Action.RIGHT_CLICK_BLOCK && TrashCan.getConfigHandler().getFrozen(e.getPlayer())) {
+            e.setCancelled(true);
+        }
 
         if (e.getAction() == Action.LEFT_CLICK_BLOCK) {
             if (TrashCan.getConfigHandler().getEnderSpawnOnEgg()) {

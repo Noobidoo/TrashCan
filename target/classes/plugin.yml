@@ -168,8 +168,10 @@ commands:
        # Done - perms: trashcan.general.mytime
    mytime:
        description: 'Set your time.'
+       # Done (originally armour) - perms: trashcan.general.armor
    armor:
        description: 'Give yourself armor.'
+       aliases: [armour]
        # Done (pages not) - perms: none
    help:
        description: 'TrashCan commands.'
