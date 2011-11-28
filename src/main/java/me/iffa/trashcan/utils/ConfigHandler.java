@@ -192,7 +192,7 @@ public class ConfigHandler {
     }
     
     public String getFormattedBroadcast(String message) {
-        return MessageUtil.parseColors(config.get(ConfigFile.CONFIG).getString("settings.broadcastformat", "&6[Broadcast]&7 {message}").replace("{message}", message));
+        return MessageUtil.parseColors(config.get(ConfigFile.CONFIG).getString("settings.broadcastformat", "&6[Broadcast]&7{message}").replace("{message}", message));
     }
 
     public boolean getBroadcastKick() {
