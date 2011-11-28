@@ -1,7 +1,7 @@
 # TrashCan plugin.yml (do not modify)
 # TrashCan license: http://creativecommons.org/licenses/by-nc-nd/3.0/
 name: TrashCan
-version: 'TC-cb1.32'
+version: 'TC-cb1.32 (this version has had many secret updates)'
 authors: [CainFoool, iffa]
 main: me.iffa.trashcan.TrashCan
 # Softdepends on CommandBin for a few reasons
@@ -211,6 +211,9 @@ commands:
        # Done (not in cmdbin) - perms: trashcan.admin.broadcast
    broadcast:
        description: 'Broadcast a message.'
+       # Done (not in cmdbin) - perms: trashcan.general.unstuck
+   unstuck:
+       description: 'Are you stuck?'
 # Permissions
 permissions:
   # Having a config setting for this, just not what you should do.
