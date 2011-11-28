@@ -35,7 +35,7 @@ public class DebugCommand extends TrashCommand {
                 Runtime rt = Runtime.getRuntime();
                 double max = Math.floor(rt.maxMemory() / 1024.0 / 1024.0);
                 double free = Math.floor(rt.freeMemory() / 1024.0 / 1024.0);
-                MessageUtil.sendMessage(cs, ChatColor.RED + "" + free + " out of " + max + " memory available."); // "" because of Java stupidness
+                MessageUtil.sendMessage(cs, ChatColor.GRAY + "" + ChatColor.GOLD + free + ChatColor.GRAY + " out of " + ChatColor.GOLD + max + ChatColor.GRAY + " memory available."); // "" because of Java stupidness
             } else {
                 MessageUtil.sendMessage(cs, ChatColor.RED + "You don't have permission!");
             }
