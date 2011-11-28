@@ -208,6 +208,9 @@ commands:
        # Done - perms: trashcan.admin.debug
    debug:
        description: 'Show debugging information.'
+       # Done (not in cmdbin) - perms: trashcan.admin.broadcast
+   broadcast:
+       description: 'Broadcast a message.'
 # Permissions
 permissions:
   # Having a config setting for this, just not what you should do.
