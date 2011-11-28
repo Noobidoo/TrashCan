@@ -43,7 +43,9 @@ public class ArmorCommand extends TrashCommand {
         if (args.length < 1) {
             return false;
         }
-        giveArmor(args[0], (Player)cs);
+        if (!giveArmor(args[0], (Player)cs)) {
+            return true;
+        }
         MessageUtil.sendMessage(cs, ChatColor.GOLD + "You received armor of type '" + args[0] + "'!");
         return true;
     }
