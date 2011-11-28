@@ -102,6 +102,8 @@ public abstract class TrashCommand {
      */
     public TrashCommand(String label) {
         this.label = label;
+        // Experimental
+        commands.put(label, this);
     }
     
     /**
@@ -128,82 +130,82 @@ public abstract class TrashCommand {
      * will simply scan through the Map for a matching command.
      */
     public static void initializeCommands() {
-        // Administration commands
-        commands.put("debug", new DebugCommand("debug"));
-        commands.put("trashcan", new AboutCommand("trashcan"));
-        commands.put("paid", new PaidCommand("paid"));
-        commands.put("who", new WhoCommand("who"));
-        commands.put("shutdown", new ShutdownCommand("shutdown"));
-        commands.put("createworld", new CreateworldCommand("createworld"));
-        commands.put("unloadworld", new UnloadworldCommand("unloadworld"));
-        commands.put("weather", new WeatherCommand("weather"));
-        commands.put("time", new TimeCommand("time"));
-        commands.put("setspawn", new SetspawnCommand("setspawn"));
-        commands.put("broadcast", new BroadcastCommand("broadcast"));
-        
-        // General commands
-        commands.put("motd", new MOTDCommand("motd"));
-        commands.put("me", new MeCommand("me"));
-        commands.put("creative", new CreativeCommand("creative"));
-        commands.put("survival", new SurvivalCommand("survival"));
-        commands.put("spawnmob", new SpawnmobCommand("spawnmob"));
-        // TODO: Add command for non-multihome /home
-        commands.put("home", TrashCan.getConfigHandler().getMultiHomes() ? new HomeCommand("home") : new HomeCommand2("home"));
-        // TODO: Add command for non-multihome /sethome
-        commands.put("sethome", TrashCan.getConfigHandler().getMultiHomes() ? new SethomeCommand("sethome") : new SethomeCommand2("sethome"));
-        commands.put("nick", new NickCommand("nick"));
-        commands.put("warp", new WarpCommand("warp"));
-        commands.put("usage", new UsageCommand("usage"));
-        commands.put("help", new HelpCommand("help"));
-        commands.put("item", new ItemCommand("item"));
-        commands.put("more", new MoreCommand("more"));
-        commands.put("feed", new FeedCommand("feed"));
-        commands.put("heal", new HealCommand("heal"));
-        commands.put("setxp", new SetxpCommand("setxp"));
-        commands.put("mytime", new MytimeCommand("mytime"));
-        commands.put("up", new UpCommand("up"));
-        commands.put("unlimited", new UnlimitedCommand("unlimited"));
-        commands.put("put", new PutCommand("put"));
-        commands.put("spawn", new SpawnCommand("spawn"));
-        commands.put("tp", new TeleportCommand("tp"));
-        commands.put("tpall", new TeleportallCommand("tpall"));
-        commands.put("tphere", new TeleporthereCommand("tphere"));
-        commands.put("msg", new MsgCommand("msg"));
-        commands.put("tpworld", new TeleportworldCommand("tpworld"));
-        commands.put("clear", new ClearCommand("clear"));
-        commands.put("armor", new ArmorCommand("armor"));
-        
-        // Fun commands
-        commands.put("crossbow", new CrossbowCommand("crossbow"));
-        commands.put("explosionbow", new ExplosionBowCommand("explosionbow"));
-        commands.put("torchbow", new TorchbowCommand("torchbow"));
-        commands.put("join", new JoinCommand("join"));
-        commands.put("leave", new LeaveCommand("leave"));
-        commands.put("facepalm", new FacepalmCommand("facepalm"));
-        commands.put("snowman", new SnowmanCommand("snowman"));
-        commands.put("explode", new ExplodeCommand("explode"));
-        commands.put("light", new LightCommand("light"));
-        commands.put("roll", new RollCommand("roll"));
-        commands.put("lightningstick", new LightningstickCommand("lightningstick"));
-        commands.put("explosionstick", new ExplosionstickCommand("explosionstick"));
-        commands.put("smoke", new SmokeCommand("smoke"));
-        commands.put("strike", new StrikeCommand("strike"));
-        commands.put("shoot", new ShootCommand("shoot"));
-        commands.put("slap", new SlapCommand("slap"));
-        
-        // Moderating commands
-        commands.put("kick", new KickCommand("kick"));
-        commands.put("ban", new BanCommand("ban"));
-        commands.put("mute", new MuteCommand("mute"));
-        commands.put("unban", new UnbanCommand("unban"));
-        commands.put("unbanip", new UnbanIPCommand("unbanip"));
-        commands.put("freeze", new FreezeCommand("freeze"));
-        commands.put("banip", new BanIPCommand("banip"));
-        commands.put("handicap", new HandicapCommand("handicap"));
-        commands.put("setwarp", new SetwarpCommand("setwarp"));
-        commands.put("delwarp", new DelwarpCommand("delwarp"));
-        commands.put("kill", new KillCommand("kill"));
-        
+//        // Administration commands
+//        commands.put("debug", new DebugCommand("debug"));
+//        commands.put("trashcan", new AboutCommand("trashcan"));
+//        commands.put("paid", new PaidCommand("paid"));
+//        commands.put("who", new WhoCommand("who"));
+//        commands.put("shutdown", new ShutdownCommand("shutdown"));
+//        commands.put("createworld", new CreateworldCommand("createworld"));
+//        commands.put("unloadworld", new UnloadworldCommand("unloadworld"));
+//        commands.put("weather", new WeatherCommand("weather"));
+//        commands.put("time", new TimeCommand("time"));
+//        commands.put("setspawn", new SetspawnCommand("setspawn"));
+//        commands.put("broadcast", new BroadcastCommand("broadcast"));
+//        
+//        // General commands
+//        commands.put("motd", new MOTDCommand("motd"));
+//        commands.put("me", new MeCommand("me"));
+//        commands.put("creative", new CreativeCommand("creative"));
+//        commands.put("survival", new SurvivalCommand("survival"));
+//        commands.put("spawnmob", new SpawnmobCommand("spawnmob"));
+//        // TODO: Add command for non-multihome /home
+//        commands.put("home", TrashCan.getConfigHandler().getMultiHomes() ? new HomeCommand("home") : new HomeCommand2("home"));
+//        // TODO: Add command for non-multihome /sethome
+//        commands.put("sethome", TrashCan.getConfigHandler().getMultiHomes() ? new SethomeCommand("sethome") : new SethomeCommand2("sethome"));
+//        commands.put("nick", new NickCommand("nick"));
+//        commands.put("warp", new WarpCommand("warp"));
+//        commands.put("usage", new UsageCommand("usage"));
+//        commands.put("help", new HelpCommand("help"));
+//        commands.put("item", new ItemCommand("item"));
+//        commands.put("more", new MoreCommand("more"));
+//        commands.put("feed", new FeedCommand("feed"));
+//        commands.put("heal", new HealCommand("heal"));
+//        commands.put("setxp", new SetxpCommand("setxp"));
+//        commands.put("mytime", new MytimeCommand("mytime"));
+//        commands.put("up", new UpCommand("up"));
+//        commands.put("unlimited", new UnlimitedCommand("unlimited"));
+//        commands.put("put", new PutCommand("put"));
+//        commands.put("spawn", new SpawnCommand("spawn"));
+//        commands.put("tp", new TeleportCommand("tp"));
+//        commands.put("tpall", new TeleportallCommand("tpall"));
+//        commands.put("tphere", new TeleporthereCommand("tphere"));
+//        commands.put("msg", new MsgCommand("msg"));
+//        commands.put("tpworld", new TeleportworldCommand("tpworld"));
+//        commands.put("clear", new ClearCommand("clear"));
+//        commands.put("armor", new ArmorCommand("armor"));
+//        
+//        // Fun commands
+//        commands.put("crossbow", new CrossbowCommand("crossbow"));
+//        commands.put("explosionbow", new ExplosionBowCommand("explosionbow"));
+//        commands.put("torchbow", new TorchbowCommand("torchbow"));
+//        commands.put("join", new JoinCommand("join"));
+//        commands.put("leave", new LeaveCommand("leave"));
+//        commands.put("facepalm", new FacepalmCommand("facepalm"));
+//        commands.put("snowman", new SnowmanCommand("snowman"));
+//        commands.put("explode", new ExplodeCommand("explode"));
+//        commands.put("light", new LightCommand("light"));
+//        commands.put("roll", new RollCommand("roll"));
+//        commands.put("lightningstick", new LightningstickCommand("lightningstick"));
+//        commands.put("explosionstick", new ExplosionstickCommand("explosionstick"));
+//        commands.put("smoke", new SmokeCommand("smoke"));
+//        commands.put("strike", new StrikeCommand("strike"));
+//        commands.put("shoot", new ShootCommand("shoot"));
+//        commands.put("slap", new SlapCommand("slap"));
+//        
+//        // Moderating commands
+//        commands.put("kick", new KickCommand("kick"));
+//        commands.put("ban", new BanCommand("ban"));
+//        commands.put("mute", new MuteCommand("mute"));
+//        commands.put("unban", new UnbanCommand("unban"));
+//        commands.put("unbanip", new UnbanIPCommand("unbanip"));
+//        commands.put("freeze", new FreezeCommand("freeze"));
+//        commands.put("banip", new BanIPCommand("banip"));
+//        commands.put("handicap", new HandicapCommand("handicap"));
+//        commands.put("setwarp", new SetwarpCommand("setwarp"));
+//        commands.put("delwarp", new DelwarpCommand("delwarp"));
+//        commands.put("kill", new KillCommand("kill"));
+//        
         // Adding each command to the List of all commands.
         for (String cmd : commands.keySet()) {
             commandsList.add(cmd);

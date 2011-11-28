@@ -211,6 +211,9 @@ commands:
        # Done (not in cmdbin) - perms: trashcan.admin.broadcast
    broadcast:
        description: 'Broadcast a message.'
+       # Done (not in cmdbin) - perms: trashcan.general.unstuck
+   unstuck:
+       description: 'Are you stuck?'
 # Permissions
 permissions:
   # Having a config setting for this, just not what you should do.
