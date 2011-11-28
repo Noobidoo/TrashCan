@@ -55,7 +55,7 @@ public class MsgCommand extends TrashCommand {
         if (target == null) {
             LoggerUtil.log(Level.INFO, "From " + cs.getName() + ":" + message);
         } else {
-            MessageUtil.sendMessage(target, ChatColor.GRAY + "From " + cs.getName() + ":" + message);
+            MessageUtil.sendMessage(target, ChatColor.GOLD + "From " + cs.getName() + ":" + ChatColor.GRAY + message);
         }
         return true;
     }
