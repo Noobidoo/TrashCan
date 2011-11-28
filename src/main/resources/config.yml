@@ -5,6 +5,8 @@
 settings:
   # Message to send when using /shutdown.
   shutdownmessage: '&cThe server is going down for shutdown!'
+  # /broadcast message format. Do not remove {message}, only move its location if you have to!
+  broadcastformat: '&6[Broadcast]&7 {message}'
   # True if kicks should be broadcasted.
   broadcastkick: true
   # True if bans should be broadcasted.
@@ -38,7 +40,7 @@ settings:
     coalore: false
     ironore: false
     goldore: false
-    diamondore: false
+    diamondore: true
     redstoneore: false
     lapislazuliore: false
   # True if mob spawners should be mineable (ie you get the drop)

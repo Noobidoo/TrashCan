@@ -190,6 +190,10 @@ public class ConfigHandler {
     public String getShutdownMessage() {
         return MessageUtil.parseColors(config.get(ConfigFile.CONFIG).getString("settings.shutdownmessage", "&cThe server is going down for shutdown!"));
     }
+    
+    public String getFormattedBroadcast(String message) {
+        return MessageUtil.parseColors(config.get(ConfigFile.CONFIG).getString("settings.broadcastformat", "&6[Broadcast]&7 {message}").replace("{message}", message));
+    }
 
     public boolean getBroadcastKick() {
         return config.get(ConfigFile.CONFIG).getBoolean("settings.broadcastkick", true);

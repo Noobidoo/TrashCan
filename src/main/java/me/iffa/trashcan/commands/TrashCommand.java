@@ -14,6 +14,7 @@ import org.bukkit.command.CommandSender;
 // TrashCan Imports
 import me.iffa.trashcan.TrashCan;
 import me.iffa.trashcan.commands.admin.AboutCommand;
+import me.iffa.trashcan.commands.admin.BroadcastCommand;
 import me.iffa.trashcan.commands.admin.CreateworldCommand;
 import me.iffa.trashcan.commands.admin.DebugCommand;
 import me.iffa.trashcan.commands.admin.PaidCommand;
@@ -138,6 +139,7 @@ public abstract class TrashCommand {
         commands.put("weather", new WeatherCommand("weather"));
         commands.put("time", new TimeCommand("time"));
         commands.put("setspawn", new SetspawnCommand("setspawn"));
+        commands.put("broadcast", new BroadcastCommand("broadcast"));
         
         // General commands
         commands.put("motd", new MOTDCommand("motd"));
