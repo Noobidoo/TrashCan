@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>me.iffa.trashcan</groupId>
     <artifactId>TrashCan</artifactId>
-    <version>dev-SNAPSHOT</version>
+    <version>pr-1.0</version>
     <name>TrashCan</name>
     <url>http://github.com/iffa/TrashCan</url>
     <!-- Repositories -->
