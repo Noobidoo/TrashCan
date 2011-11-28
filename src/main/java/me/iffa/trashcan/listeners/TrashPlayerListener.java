@@ -94,7 +94,7 @@ public class TrashPlayerListener extends PlayerListener {
         if (e.isCancelled()) {
             return;
         }
-        if (e.getAction() == Action.RIGHT_CLICK_AIR) {
+        if (e.getAction() == Action.RIGHT_CLICK_BLOCK || e.getAction() == Action.RIGHT_CLICK_AIR) {
             if (TrashCan.getConfigHandler().getExplosionStick(e.getPlayer())) {
                 if (e.getPlayer().getItemInHand().getType() == Material.STICK) {
                     Location block = e.getPlayer().getTargetBlock(null, 0).getLocation();
