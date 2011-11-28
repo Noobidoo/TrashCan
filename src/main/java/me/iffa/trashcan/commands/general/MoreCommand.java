@@ -40,6 +40,10 @@ public class MoreCommand extends TrashCommand {
             return true;
         }
         Player player = (Player) cs;
+        if (player.getItemInHand() == null) {
+            MessageUtil.sendMessage(player, ChatColor.RED + "Can't give you more of air!");
+            return true;
+        }
         player.getItemInHand().setAmount(64);
         MessageUtil.sendMessage(player, ChatColor.GOLD + "You've been given more of " + player.getItemInHand().getType().toString() + "!");
         return true;
