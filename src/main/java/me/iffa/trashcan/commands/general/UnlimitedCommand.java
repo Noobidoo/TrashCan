@@ -44,9 +44,9 @@ public class UnlimitedCommand extends TrashCommand {
             }
             TrashCan.getConfigHandler().setUnlimited(!TrashCan.getConfigHandler().getUnlimited((Player)cs), (Player)cs);
             if (TrashCan.getConfigHandler().getUnlimited((Player)cs)) {
-                MessageUtil.sendMessage(cs, ChatColor.GOLD + "Unlimited drops has been enabled for you!");
+                MessageUtil.sendMessage(cs, ChatColor.GOLD + "Unlimited has been enabled for you!");
             } else {
-                MessageUtil.sendMessage(cs, ChatColor.GOLD + "Unlimited drops has been disabled for you!");
+                MessageUtil.sendMessage(cs, ChatColor.GOLD + "Unlimited has been disabled for you!");
             }
             return true;
         } else {
