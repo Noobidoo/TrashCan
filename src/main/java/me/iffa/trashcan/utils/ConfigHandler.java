@@ -352,7 +352,7 @@ public class ConfigHandler {
     }
 
     public boolean getLightningStick(Player player) {
-        return config.get(ConfigFile.CONFIG).getBoolean(player.getName() + ".lightning", false);
+        return config.get(ConfigFile.CONFIG).getBoolean(player.getName() + ".lightningstick", false);
     }
 
     public String getNick(Player player) {
