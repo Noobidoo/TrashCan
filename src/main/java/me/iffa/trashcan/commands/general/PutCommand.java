@@ -51,7 +51,7 @@ public class PutCommand extends TrashCommand {
             MessageUtil.sendMessage(player, ChatColor.RED + "The player was not found!");
             return true;
         }
-        Location targetLoc = player.getLineOfSight(null, 128).get(0).getRelative(BlockFace.UP, 2).getLocation();
+        Location targetLoc = player.getTargetBlock(null, 128).getRelative(BlockFace.UP, 2).getLocation();
         target.teleport(targetLoc);
         MessageUtil.sendMessage(player, ChatColor.GOLD + "Teleported!");
         MessageUtil.sendMessage(target, ChatColor.GOLD + "Teleported!");
