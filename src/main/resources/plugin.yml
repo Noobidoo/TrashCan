@@ -208,3 +208,9 @@ commands:
        # Done - perms: trashcan.admin.debug
    debug:
        description: 'Show debugging information.'
+# Permissions
+permissions:
+  # Having a config setting for this, just not what you should do.
+  trashcan.other.strike-on-join:
+    description: 'Allows a player to receive a lightning on their location when joining.'
+    default: false
