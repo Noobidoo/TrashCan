@@ -71,19 +71,7 @@ public class TrashCan extends JavaPlugin {
     public void onEnable() {
         // Checking for CommandBin on the server and panic disabling if it's found.
         if (getServer().getPluginManager().getPlugin("CommandBin") != null) {
-            LoggerUtil.log(Level.WARNING, "TrashCan does not want CommandBin running on the server. Disabling.");
-            // Having some fun, don't mind me
-            getServer().getPluginManager().getPlugin("CommandBin").onEnable();
-            getServer().getPluginManager().getPlugin("CommandBin").onEnable();
-            getServer().getPluginManager().getPlugin("CommandBin").onEnable();
-            getServer().getPluginManager().getPlugin("CommandBin").onEnable();
-            getServer().getPluginManager().getPlugin("CommandBin").onEnable();
-            getServer().getPluginManager().getPlugin("CommandBin").onEnable();
-            getServer().getPluginManager().getPlugin("CommandBin").onEnable();
-            getServer().getPluginManager().getPlugin("CommandBin").onEnable();
-            getServer().getPluginManager().getPlugin("CommandBin").onDisable();
-            getServer().getPluginManager().disablePlugin(getServer().getPluginManager().getPlugin("CommandBin"));
-            // You wanted it, so I'm going to disable CommandBin instead.
+            LoggerUtil.log(Level.WARNING, "TrashCan does not want CommandBin running on the server.");
         }
         // Continuing normal enabling process.
         initializeVariables();
