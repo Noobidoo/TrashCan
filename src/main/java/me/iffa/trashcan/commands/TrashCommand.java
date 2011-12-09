@@ -89,7 +89,6 @@ import me.iffa.trashcan.commands.moderator.UnbanIPCommand;
 
 /**
  * Represents a command of TrashCan.
- * TrashCan license: http://creativecommons.org/licenses/by-nc-nd/3.0/
  * 
  * @author iffamies
  */

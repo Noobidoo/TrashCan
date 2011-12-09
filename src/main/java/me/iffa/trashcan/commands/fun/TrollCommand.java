@@ -15,7 +15,6 @@ import org.bukkit.inventory.ItemStack;
 
 /**
  * Represents /troll.
- * TrashCan license: http://creativecommons.org/licenses/by-nc-nd/3.0/
  * 
  * @author iffamies
  */

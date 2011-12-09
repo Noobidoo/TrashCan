@@ -26,7 +26,6 @@ import org.bukkit.util.Vector;
 
 /**
  * Player listener for features like freezing, smoking, snowman, ban & kick etc.
- * TrashCan license: http://creativecommons.org/licenses/by-nc-nd/3.0/
  * 
  * @author iffamies
  */

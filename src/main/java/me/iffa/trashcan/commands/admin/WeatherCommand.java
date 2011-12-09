@@ -16,7 +16,6 @@ import org.bukkit.entity.Player;
  * NOTE: /sun and /rain are now this command. Cain is obviously too lazy to
  * make one command for weather. Using this command without arguments tells
  * current weather. That requires no permissions.
- * TrashCan license: http://creativecommons.org/licenses/by-nc-nd/3.0/
  * 
  * @author iffamies
  */

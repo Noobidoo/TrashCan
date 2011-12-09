@@ -16,7 +16,6 @@ import org.bukkit.command.CommandSender;
  * Represents /createworld. 
  * NOTE: because Cain is lazy, I added environment as an argument too. It's 
  * optional though.
- * TrashCan license: http://creativecommons.org/licenses/by-nc-nd/3.0/
  * 
  * @author iffamies
  */

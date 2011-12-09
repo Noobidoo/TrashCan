@@ -16,7 +16,6 @@ import org.bukkit.command.CommandSender;
 
 /**
  * Represents /help.
- * TrashCan license: http://creativecommons.org/licenses/by-nc-nd/3.0/
  * 
  * @author iffamies
  */

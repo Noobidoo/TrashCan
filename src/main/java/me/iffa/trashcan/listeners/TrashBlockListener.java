@@ -18,7 +18,6 @@ import org.bukkit.inventory.ItemStack;
 /**
  * BlockListener for several features of TrashCan, including unlimited drops,
  * basic protection and ore broadcasting.
- * TrashCan license: http://creativecommons.org/licenses/by-nc-nd/3.0/
  * 
  * @author iffamies
  */

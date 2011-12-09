@@ -40,9 +40,6 @@ import org.bukkit.plugin.java.JavaPlugin;
  * - http://creativecommons.org/licenses/by-sa/1.0/legalcode
  * - http://creativecommons.org/licenses/by-sa/1.0/
  * 
- * TrashCan license: http://creativecommons.org/licenses/by-nc-nd/3.0/
- * (please note: do not take this license too seriously :D)
- * 
  * Main class of TrashCan, a (Craft)Bukkit plugin originally made by "CainFool", 
  * who does not know any proper Java and will never learn that either. Consider 
  * this plugin a Craftbukkit for CommandBin. Every time CommandBin receives a

@@ -15,7 +15,6 @@ import org.bukkit.command.CommandSender;
 
 /**
  * CommandExecutor for all commands.
- * TrashCan license: http://creativecommons.org/licenses/by-nc-nd/3.0/
  * 
  * @author iffamies
  */

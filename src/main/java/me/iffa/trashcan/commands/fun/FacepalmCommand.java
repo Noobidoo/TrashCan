@@ -13,7 +13,6 @@ import org.bukkit.entity.Player;
 
 /**
  * Represents /facepalm.
- * TrashCan license: http://creativecommons.org/licenses/by-nc-nd/3.0/
  * 
  * @author iffamies
  */

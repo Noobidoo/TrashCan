@@ -16,7 +16,6 @@ import org.bukkit.entity.Player;
 /**
  * Represents /shutdown.
  * NOTE: Since Cain was too lazy to implement this, I'm implementing it myself.
- * TrashCan license: http://creativecommons.org/licenses/by-nc-nd/3.0/
  * 
  * @author iffamies
  */

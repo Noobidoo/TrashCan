@@ -13,7 +13,6 @@ import org.bukkit.command.CommandSender;
 
 /**
  * Represents /unloadworld.
- * TrashCan license: http://creativecommons.org/licenses/by-nc-nd/3.0/
  * 
  * @author iffamies
  */

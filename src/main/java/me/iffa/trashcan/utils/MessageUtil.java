@@ -12,7 +12,6 @@ import org.bukkit.entity.Player;
 /**
  * Utility class to make sending messages to players and other "things" as easy
  * as possible.
- * TrashCan license: http://creativecommons.org/licenses/by-nc-nd/3.0/
  * 
  * @author iffamies
  */
