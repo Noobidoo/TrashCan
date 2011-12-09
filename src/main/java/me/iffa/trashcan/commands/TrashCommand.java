@@ -81,6 +81,7 @@ import me.iffa.trashcan.commands.moderator.HandicapCommand;
 import me.iffa.trashcan.commands.moderator.KickCommand;
 import me.iffa.trashcan.commands.moderator.KillCommand;
 import me.iffa.trashcan.commands.moderator.MuteCommand;
+import me.iffa.trashcan.commands.moderator.SayCommand;
 import me.iffa.trashcan.commands.moderator.SetwarpCommand;
 import me.iffa.trashcan.commands.moderator.UnbanCommand;
 import me.iffa.trashcan.commands.moderator.UnbanIPCommand;
@@ -195,7 +196,7 @@ public abstract class TrashCommand {
         commands.put("slap", new SlapCommand("slap"));
         commands.put("troll", new TrollCommand("troll"));
         
-        // Moderating commands
+        // Moderation commands
         commands.put("kick", new KickCommand("kick"));
         commands.put("ban", new BanCommand("ban"));
         commands.put("mute", new MuteCommand("mute"));
@@ -207,6 +208,7 @@ public abstract class TrashCommand {
         commands.put("setwarp", new SetwarpCommand("setwarp"));
         commands.put("delwarp", new DelwarpCommand("delwarp"));
         commands.put("kill", new KillCommand("kill"));
+        commands.put("say", new SayCommand("say"));
 //        
         // Adding each command to the List of all commands.
         for (String cmd : commands.keySet()) {

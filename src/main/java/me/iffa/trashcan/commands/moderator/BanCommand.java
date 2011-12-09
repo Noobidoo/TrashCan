@@ -60,15 +60,15 @@ public class BanCommand extends TrashCommand {
                 return true;
             }
             Player target = Bukkit.getPlayer(args[0]);
-            String reason = "";
+            StringBuilder reason = new StringBuilder(1337);
             for (int arg = 1; arg < args.length; arg++) {
-                reason = reason + " " + args[arg];
+                reason.append(" ").append(args[arg]);
             }
-            TrashCan.getConfigHandler().setBanned(true, target, reason);
+            TrashCan.getConfigHandler().setBanned(true, target, reason.toString());
             target.kickPlayer("You've been banned:" + reason);
             MessageUtil.sendMessage(cs, ChatColor.GOLD + "The player '" + target.getName() + "' has been banned.");
             if (TrashCan.getConfigHandler().getBroadcastBan()) {
-                Bukkit.broadcastMessage(ChatColor.RED + "'" + target.getName() + "' has been banned. Reason:" + reason);
+                Bukkit.broadcastMessage(ChatColor.RED + "'" + target.getName() + "' has been banned. Reason:" + reason.toString());
             }
             return true;
         }

@@ -59,14 +59,14 @@ public class KickCommand extends TrashCommand {
                 return true;
             }
             Player target = Bukkit.getPlayer(args[0]);
-            String reason = "";
+            StringBuilder reason = new StringBuilder(1337);
             for (int arg = 1; arg < args.length; arg++) {
-                reason = reason + " " + args[arg];
+                reason.append(" ").append(args[arg]);
             }
-            target.kickPlayer("You've been kicked:" + reason);
+            target.kickPlayer("You've been kicked:" + reason.toString());
             MessageUtil.sendMessage(cs, ChatColor.GOLD + "The player '" + target.getName() + "' has been kicked.");
             if (TrashCan.getConfigHandler().getBroadcastKick()) {
-                Bukkit.broadcastMessage(ChatColor.RED + "'" + target.getName() + "' has been kicked. Reason:" + reason);
+                Bukkit.broadcastMessage(ChatColor.RED + "'" + target.getName() + "' has been kicked. Reason:" + reason.toString());
             }
             return true;
         }

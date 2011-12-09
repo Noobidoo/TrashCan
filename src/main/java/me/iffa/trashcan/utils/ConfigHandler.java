@@ -187,6 +187,11 @@ public class ConfigHandler {
     }
 
     /* Getter methods */ // TODO: JavaDoc all of this down below
+    
+    public String getConsoleName() {
+        return config.get(ConfigFile.CONFIG).getString("settings.console-name", "Larry");
+    }
+    
     public String getShutdownMessage() {
         return MessageUtil.parseColors(config.get(ConfigFile.CONFIG).getString("settings.shutdown-message", "&cThe server is going down for shutdown!"));
     }

@@ -22,6 +22,7 @@ import org.bukkit.entity.Player;
  * @author iffamies
  */
 public class MsgCommand extends TrashCommand {
+
     /**
      * Constructor of MsgCommand.
      * 
@@ -48,14 +49,14 @@ public class MsgCommand extends TrashCommand {
             MessageUtil.sendMessage(cs, ChatColor.RED + "The player was not found!");
             return true;
         }
-        String message = "";
+        StringBuilder message = new StringBuilder(1337);
         for (int arg = 1; arg < args.length; arg++) {
-            message = message + " " + args[arg];
+            message.append(" ").append(args[arg]);
         }
         if (target == null) {
-            LoggerUtil.log(Level.INFO, "From " + cs.getName() + ":" + message);
+            LoggerUtil.log(Level.INFO, "From " + cs.getName() + ":" + message.toString());
         } else {
-            MessageUtil.sendMessage(target, ChatColor.GOLD + "From " + cs.getName() + ":" + ChatColor.GRAY + message);
+            MessageUtil.sendMessage(target, ChatColor.GOLD + "From " + cs.getName() + ":" + ChatColor.GRAY + message.toString());
         }
         return true;
     }
@@ -67,5 +68,4 @@ public class MsgCommand extends TrashCommand {
     public void sendUsage(CommandSender cs) {
         MessageUtil.sendMessage(cs, ChatColor.GRAY + "Usage: /msg <player/console> <message>");
     }
-    
 }
