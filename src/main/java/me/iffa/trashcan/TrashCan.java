@@ -13,10 +13,7 @@ import me.iffa.trashcan.utils.ConfigHandler;
 import me.iffa.trashcan.utils.LoggerUtil;
 
 // Bukkit Imports
-import org.bukkit.Material;
 import org.bukkit.event.Event;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.ShapelessRecipe;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -25,7 +22,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 /**
  * NOTE TO CAIN: I am not breaking your license. Your license is invalid.
  * "[07:54:00] <CainFoool> Not under my license."
- * "
  * 
  * - If this is to be your meaning of "distribution", 
  * - you shall know that as this work is not within strict copyright law, 
@@ -45,6 +41,7 @@ import org.bukkit.plugin.java.JavaPlugin;
  * - http://creativecommons.org/licenses/by-sa/1.0/
  * 
  * TrashCan license: http://creativecommons.org/licenses/by-nc-nd/3.0/
+ * (please note: do not take this license too seriously :D)
  * 
  * Main class of TrashCan, a (Craft)Bukkit plugin originally made by "CainFool", 
  * who does not know any proper Java and will never learn that either. Consider 
@@ -59,7 +56,7 @@ public class TrashCan extends JavaPlugin {
     // Variables
     private static ConfigHandler configHandler;
     private static PluginDescriptionFile description;
-    private static String prefix = "[TrashCan]";
+    private static final String prefix = "[TrashCan]";
     private final TrashBlockListener blockListener = new TrashBlockListener(this);
     private final TrashEntityListener entityListener = new TrashEntityListener(this);
     private final TrashPlayerListener playerListener = new TrashPlayerListener();

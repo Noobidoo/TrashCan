@@ -40,6 +40,7 @@ import me.iffa.trashcan.commands.fun.SmokeCommand;
 import me.iffa.trashcan.commands.fun.SnowmanCommand;
 import me.iffa.trashcan.commands.fun.StrikeCommand;
 import me.iffa.trashcan.commands.fun.TorchbowCommand;
+import me.iffa.trashcan.commands.fun.TrollCommand;
 import me.iffa.trashcan.commands.general.ArmorCommand;
 import me.iffa.trashcan.commands.general.ClearCommand;
 import me.iffa.trashcan.commands.general.CreativeCommand;
@@ -56,6 +57,7 @@ import me.iffa.trashcan.commands.general.MsgCommand;
 import me.iffa.trashcan.commands.general.MytimeCommand;
 import me.iffa.trashcan.commands.general.NickCommand;
 import me.iffa.trashcan.commands.general.PutCommand;
+import me.iffa.trashcan.commands.general.RealnameCommand;
 import me.iffa.trashcan.commands.general.SethomeCommand;
 import me.iffa.trashcan.commands.general.SethomeCommand2;
 import me.iffa.trashcan.commands.general.SetxpCommand;
@@ -148,9 +150,7 @@ public abstract class TrashCommand {
         commands.put("creative", new CreativeCommand("creative"));
         commands.put("survival", new SurvivalCommand("survival"));
         commands.put("spawnmob", new SpawnmobCommand("spawnmob"));
-        // TODO: Add command for non-multihome /home
         commands.put("home", TrashCan.getConfigHandler().getMultiHomes() ? new HomeCommand("home") : new HomeCommand2("home"));
-        // TODO: Add command for non-multihome /sethome
         commands.put("sethome", TrashCan.getConfigHandler().getMultiHomes() ? new SethomeCommand("sethome") : new SethomeCommand2("sethome"));
         commands.put("nick", new NickCommand("nick"));
         commands.put("warp", new WarpCommand("warp"));
@@ -174,6 +174,7 @@ public abstract class TrashCommand {
         commands.put("clear", new ClearCommand("clear"));
         commands.put("armor", new ArmorCommand("armor"));
         commands.put("unstuck", new UnstuckCommand("unstuck"));
+        commands.put("realname", new RealnameCommand("realname"));
         
         // Fun commands
         commands.put("crossbow", new CrossbowCommand("crossbow"));
@@ -192,6 +193,7 @@ public abstract class TrashCommand {
         commands.put("strike", new StrikeCommand("strike"));
         commands.put("shoot", new ShootCommand("shoot"));
         commands.put("slap", new SlapCommand("slap"));
+        commands.put("troll", new TrollCommand("troll"));
         
         // Moderating commands
         commands.put("kick", new KickCommand("kick"));

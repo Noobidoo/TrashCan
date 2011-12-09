@@ -1,7 +1,7 @@
 # TrashCan plugin.yml (do not modify)
 # TrashCan license: http://creativecommons.org/licenses/by-nc-nd/3.0/
 name: TrashCan
-version: 'TC-cb1.32 (this version has had many secret updates)'
+version: 'TC-cb1.33'
 authors: [CainFoool, iffa]
 main: me.iffa.trashcan.TrashCan
 # Softdepends on CommandBin for a few reasons
@@ -214,6 +214,14 @@ commands:
        # Done (not in cmdbin) - perms: trashcan.general.unstuck
    unstuck:
        description: 'Are you stuck?'
+       # Done (not in cmdbin, alias /real) - perms: trashcan.general.realname
+   realname:
+       description: 'Who has this display name?'
+       aliases: [real]
+       # New commands since 1.32 release
+       # Done (optional argument item)  - perms: trashcan.fun.troll
+   troll:
+       description: 'Fake items, you silly troll!'
 # Permissions
 permissions:
   # Having a config setting for this, just not what you should do.
