@@ -24,12 +24,18 @@ settings:
   leave-message: 'has left the game'
   # True if XP should be dropped on death
   drop-xp-on-death: false
+  # True if lapis blocks should bounce you up in the air
+  bouncy-lapis: true
+  # Lapis bounce strength (don't go too extreme or you'll be never found again!)
+  bounce-strength: 0.4
   # Maximum amount of mobs that can be spawned once with /spawnmob
   spawn-mob-max-amount: 10
   # True if spawned (/spawnmob) wolves should be tamed automatically
   tame-spawned-wolves: true
   # True if Endermen are allowed to grief (pick up blocks and place them)
   enderman-griefing: false
+  # True if Enderdragons are allowed to grief (break blocks they touch)
+  enderdragon-griefing: false
   # Basic protection settings
   protection:
     block-placing-tnt: true

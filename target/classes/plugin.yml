@@ -1,7 +1,7 @@
 # TrashCan plugin.yml (do not modify)
 # TrashCan license: http://creativecommons.org/licenses/by-nc-nd/3.0/
 name: TrashCan
-version: 'TC-cb1.32 (this version has had many secret updates)'
+version: 'TC-cb1.33'
 authors: [CainFoool, iffa]
 main: me.iffa.trashcan.TrashCan
 # Softdepends on CommandBin for a few reasons
@@ -98,10 +98,10 @@ commands:
        # Done - perms: trashcan.fun.roll
    roll:
        description: 'Roll a number.'
-       # Done, unhandicap is now in this command - perms: trashcan.moderating.handicap
+       # Done, unhandicap is now in this command - perms: trashcan.moderation.handicap
    handicap:
        description: 'Disable a player from using commands.'
-       # Done, /unmute is now in this command - perms: trashcan.moderating.mute
+       # Done, /unmute is now in this command - perms: trashcan.moderation.mute
    mute:
        description: 'Mute a player.'
        # Done - perms: trashcan.fun.smoke
@@ -187,10 +187,10 @@ commands:
        # Done - perms: trashcan.general.put
    put:
        description: 'Put a player where you are looking.'
-       # Done - perms: trashcan.moderating.banip
+       # Done - perms: trashcan.moderation.banip
    banip:
        description: 'Ban a players IP address.'
-       # Done - perms: trashcan.moderating.unbanip
+       # Done - perms: trashcan.moderation.unbanip
    unbanip:
        description: 'Unban a players IP.'
        # Done - perms: trashcan.general.me
@@ -214,6 +214,20 @@ commands:
        # Done (not in cmdbin) - perms: trashcan.general.unstuck
    unstuck:
        description: 'Are you stuck?'
+       # Done (not in cmdbin, alias /real) - perms: trashcan.general.realname
+   realname:
+       description: 'Who has this display name?'
+       aliases: [real]
+       # New commands since 1.32 release
+       # Done (optional argument item)  - perms: trashcan.fun.troll
+   troll:
+       description: 'Fake items, you silly troll!'
+       # Done - perms: trashcan.moderation.say
+   say:
+       description: 'Say a message of your liking.'
+       # Done - perms: trashcan.fun.fsay
+   fsay:
+       description: 'Force someone to chat! (SO EVIL.)'
 # Permissions
 permissions:
   # Having a config setting for this, just not what you should do.

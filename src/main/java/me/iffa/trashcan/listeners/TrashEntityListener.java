@@ -9,6 +9,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Creeper;
+import org.bukkit.entity.EnderDragon;
 import org.bukkit.entity.Player;
 import org.bukkit.event.entity.EndermanPickupEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
@@ -72,6 +73,8 @@ public class TrashEntityListener extends EntityListener {
     @Override
     public void onEntityExplode(EntityExplodeEvent e) {
         if (TrashCan.getConfigHandler().getBlockCreeper() && e instanceof Creeper) {
+            e.setCancelled(true);
+        } else if (TrashCan.getConfigHandler().getEnderdragonGrief() && e instanceof EnderDragon) {
             e.setCancelled(true);
         }
     }

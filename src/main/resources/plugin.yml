@@ -222,9 +222,12 @@ commands:
        # Done (optional argument item)  - perms: trashcan.fun.troll
    troll:
        description: 'Fake items, you silly troll!'
-       # Working on - perms: trashcan.moderation.say
+       # Done - perms: trashcan.moderation.say
    say:
        description: 'Say a message of your liking.'
+       # Done - perms: trashcan.fun.fsay
+   fsay:
+       description: 'Force someone to chat! (SO EVIL.)'
 # Permissions
 permissions:
   # Having a config setting for this, just not what you should do.

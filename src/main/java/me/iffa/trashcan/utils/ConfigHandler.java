@@ -247,6 +247,10 @@ public class ConfigHandler {
     public boolean getBlockCreeper() {
         return config.get(ConfigFile.CONFIG).getBoolean("settings.protection.block-creeper-explosions", true);
     }
+    
+    public boolean getEnderdragonGrief() {
+        return config.get(ConfigFile.CONFIG).getBoolean("settings.enderdragon-greifing", false);
+    }
 
     public boolean getCoal() {
         return config.get(ConfigFile.CONFIG).getBoolean("settings.orebroadcast.coal-ore", false);
@@ -380,6 +384,14 @@ public class ConfigHandler {
     
     public boolean getTameSpawnedWolves() {
         return config.get(ConfigFile.CONFIG).getBoolean("settings.tame-spawned-wolves", true);
+    }
+    
+    public boolean getBouncyLapis() {
+        return config.get(ConfigFile.CONFIG).getBoolean("settings.bouncy-lapis", true);
+    }
+    
+    public double getBounceStrength() {
+        return config.get(ConfigFile.CONFIG).getDouble("settings.bounce-strength", 0.4);
     }
     
     public Location getHome(String home, Player player) {

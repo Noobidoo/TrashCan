@@ -29,6 +29,7 @@ import me.iffa.trashcan.commands.fun.ExplodeCommand;
 import me.iffa.trashcan.commands.fun.ExplosionBowCommand;
 import me.iffa.trashcan.commands.fun.ExplosionstickCommand;
 import me.iffa.trashcan.commands.fun.FacepalmCommand;
+import me.iffa.trashcan.commands.fun.ForcesayCommand;
 import me.iffa.trashcan.commands.fun.JoinCommand;
 import me.iffa.trashcan.commands.fun.LeaveCommand;
 import me.iffa.trashcan.commands.fun.LightCommand;
@@ -195,6 +196,7 @@ public abstract class TrashCommand {
         commands.put("shoot", new ShootCommand("shoot"));
         commands.put("slap", new SlapCommand("slap"));
         commands.put("troll", new TrollCommand("troll"));
+        commands.put("fsay", new ForcesayCommand("forcesay"));
         
         // Moderation commands
         commands.put("kick", new KickCommand("kick"));

@@ -22,6 +22,7 @@ import org.bukkit.event.player.PlayerLoginEvent;
 import org.bukkit.event.player.PlayerLoginEvent.Result;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.util.Vector;
 
 /**
  * Player listener for features like freezing, smoking, snowman, ban & kick etc.
@@ -53,6 +54,9 @@ public class TrashPlayerListener extends PlayerListener {
             if (e.getPlayer().getLocation().getBlock().getRelative(BlockFace.DOWN, 1).getType() == Material.SNOW) {
                 e.getPlayer().getLocation().getBlock().getRelative(BlockFace.DOWN, 1).setType(Material.SNOW_BLOCK);
             }
+        }
+        if (TrashCan.getConfigHandler().getBouncyLapis() && e.getPlayer().getLocation().getBlock().getRelative(BlockFace.DOWN).getType() == Material.LAPIS_BLOCK) {
+            e.getPlayer().setVelocity(new Vector(e.getPlayer().getVelocity().getX(), TrashCan.getConfigHandler().getBounceStrength(), e.getPlayer().getVelocity().getZ()));
         }
     }
 
