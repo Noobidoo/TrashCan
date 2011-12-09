@@ -188,23 +188,23 @@ public class ConfigHandler {
 
     /* Getter methods */ // TODO: JavaDoc all of this down below
     public String getShutdownMessage() {
-        return MessageUtil.parseColors(config.get(ConfigFile.CONFIG).getString("settings.shutdownmessage", "&cThe server is going down for shutdown!"));
+        return MessageUtil.parseColors(config.get(ConfigFile.CONFIG).getString("settings.shutdown-message", "&cThe server is going down for shutdown!"));
     }
     
     public String getFormattedBroadcast(String message) {
-        return MessageUtil.parseColors(config.get(ConfigFile.CONFIG).getString("settings.broadcastformat", "&6[Broadcast]&7{message}").replace("{message}", message));
+        return MessageUtil.parseColors(config.get(ConfigFile.CONFIG).getString("settings.broadcast-format", "&6[Broadcast]&7{message}").replace("{message}", message));
     }
 
     public boolean getBroadcastKick() {
-        return config.get(ConfigFile.CONFIG).getBoolean("settings.broadcastkick", true);
+        return config.get(ConfigFile.CONFIG).getBoolean("settings.broadcast-kicks", true);
     }
 
     public boolean getBroadcastBan() {
-        return config.get(ConfigFile.CONFIG).getBoolean("settings.broadcastban", true);
+        return config.get(ConfigFile.CONFIG).getBoolean("settings.broadcast-bans", true);
     }
 
     public String getMutedMessage() {
-        return MessageUtil.parseColors(config.get(ConfigFile.CONFIG).getString("settings.playerismuted", "&cYou are muted, shh!"));
+        return MessageUtil.parseColors(config.get(ConfigFile.CONFIG).getString("settings.muted-message", "&cYou are muted, shh!"));
     }
 
     public String getNoCommandsMessage() {
@@ -212,15 +212,15 @@ public class ConfigHandler {
     }
 
     public String getJoinMessage() {
-        return MessageUtil.parseColors(config.get(ConfigFile.CONFIG).getString("settings.joinmessage", "&ehas joined the game"));
+        return MessageUtil.parseColors(config.get(ConfigFile.CONFIG).getString("settings.join-message", "&ehas joined the game"));
     }
 
     public String getLeaveMessage() {
-        return MessageUtil.parseColors(config.get(ConfigFile.CONFIG).getString("settings.leavemessage", "&ehas left the game"));
+        return MessageUtil.parseColors(config.get(ConfigFile.CONFIG).getString("settings.leave-message", "&ehas left the game"));
     }
 
     public boolean getDropXPDeath() {
-        return config.get(ConfigFile.CONFIG).getBoolean("settings.dropxpondeath", false);
+        return config.get(ConfigFile.CONFIG).getBoolean("settings.drop-xp-on-death", false);
     }
 
     public int getMaxMobAmount() {
@@ -228,7 +228,7 @@ public class ConfigHandler {
     }
 
     public boolean getEnderGrief() {
-        return config.get(ConfigFile.CONFIG).getBoolean("settings.endermangriefing", false);
+        return config.get(ConfigFile.CONFIG).getBoolean("settings.enderman-griefing", false);
     }
 
     public boolean getBlockTNT() {
@@ -244,35 +244,35 @@ public class ConfigHandler {
     }
 
     public boolean getCoal() {
-        return config.get(ConfigFile.CONFIG).getBoolean("settings.orebroadcast.coalore", false);
+        return config.get(ConfigFile.CONFIG).getBoolean("settings.orebroadcast.coal-ore", false);
     }
 
     public boolean getIron() {
-        return config.get(ConfigFile.CONFIG).getBoolean("settings.orebroadcast.ironore", false);
+        return config.get(ConfigFile.CONFIG).getBoolean("settings.orebroadcast.iron-ore", false);
     }
 
     public boolean getGold() {
-        return config.get(ConfigFile.CONFIG).getBoolean("settings.orebroadcast.goldore", false);
+        return config.get(ConfigFile.CONFIG).getBoolean("settings.orebroadcast.gold-ore", false);
     }
 
     public boolean getDiamond() {
-        return config.get(ConfigFile.CONFIG).getBoolean("settings.orebroadcast.diamondore", false);
+        return config.get(ConfigFile.CONFIG).getBoolean("settings.orebroadcast.diamond-ore", false);
     }
 
     public boolean getRedstone() {
-        return config.get(ConfigFile.CONFIG).getBoolean("settings.orebroadcast.redstoneore", false);
+        return config.get(ConfigFile.CONFIG).getBoolean("settings.orebroadcast.redstone-ore", false);
     }
 
     public boolean getLapis() {
-        return config.get(ConfigFile.CONFIG).getBoolean("settings.orebroadcast.lapislazuliore", false);
+        return config.get(ConfigFile.CONFIG).getBoolean("settings.orebroadcast.lapislazuli-ore", false);
     }
 
     public boolean getMineSpawners() {
-        return config.get(ConfigFile.CONFIG).getBoolean("settings.mineablemobspawners", true);
+        return config.get(ConfigFile.CONFIG).getBoolean("settings.mineable-spawners", true);
     }
 
     public boolean getAdminPM() {
-        return config.get(ConfigFile.CONFIG).getBoolean("settings.opscanseepms", true);
+        return config.get(ConfigFile.CONFIG).getBoolean("settings.admins-can-see-pms", true);
     }
 
     public String getMOTD() {
@@ -280,11 +280,11 @@ public class ConfigHandler {
     }
 
     public boolean getCustomChat() {
-        return config.get(ConfigFile.CONFIG).getBoolean("settings.customchat", true);
+        return config.get(ConfigFile.CONFIG).getBoolean("settings.custom-chat", true);
     }
 
     public int getBowExplosionRadius() {
-        return config.get(ConfigFile.CONFIG).getInt("settings.bowexplosionradius", 3);
+        return config.get(ConfigFile.CONFIG).getInt("settings.bow-explosion-radius", 3);
     }
 
     public boolean getEnderSpawnOnEgg() {
@@ -422,7 +422,7 @@ public class ConfigHandler {
     }
     
     public boolean getMultiHomes() {
-        return config.get(ConfigFile.CONFIG).getBoolean("settings.multihomes", true);
+        return config.get(ConfigFile.CONFIG).getBoolean("settings.multiple-homes", true);
     }
 
     /* Setter methods */
